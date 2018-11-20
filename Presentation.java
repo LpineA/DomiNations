@@ -31,7 +31,7 @@ public class Presentation {
 			preparation();
 		}
 		
-		if (nbJoueurs <= 0) {
+		if (nbJoueurs <= 1) {
 			System.out.println("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
 			preparation();
 		}
@@ -52,24 +52,24 @@ public class Presentation {
 		
 		if (nbJoueurs == 3) {
 			System.out.println("Entrez le pseudo du premier joueur");
-			pseudoJoueur1 = scan.nextLine();
+			pseudoJoueur1 = scan.next();
 			System.out.println("Entrez le pseudo du second joueur");
-			pseudoJoueur2 = scan.nextLine();
+			pseudoJoueur2 = scan.next();
 			System.out.println("Entrez le pseudo du troisième joueur");
-			pseudoJoueur3 = scan.nextLine();	
+			pseudoJoueur3 = scan.next();	
 			JeuDeCarte.removeCard(jeu, 12);
 
 		}
 		
 		if (nbJoueurs == 4 ) {
 			System.out.println("Entrez le pseudo du premier joueur");
-			pseudoJoueur1 = scan.nextLine();
+			pseudoJoueur1 = scan.next();
 			System.out.println("Entrez le pseudo du second joueur");
-			pseudoJoueur2 = scan.nextLine();
+			pseudoJoueur2 = scan.next();
 			System.out.println("Entrez le pseudo du troisième joueur");
-			pseudoJoueur3 = scan.nextLine();
+			pseudoJoueur3 = scan.next();
 			System.out.println("Entrez le pseudo du quatrième joueur");
-			pseudoJoueur4 = scan.nextLine();
+			pseudoJoueur4 = scan.next();
 		}
 		
 
