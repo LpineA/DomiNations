@@ -2,18 +2,18 @@ package com.sdz.test;
 
 import java.util.*;
 
-public class JeuDeCarte {
+public class CardGame {
 
-    public static int nbrdepoints;
-    public static HashMap<Integer, String> jeu = new HashMap<Integer, String>();
-    public static int randomPioche = (int) (Math.random() * (48) + 0);
-    public static int nbTirage;
+    public static int pointNumber;
+    public static HashMap<Integer, String> game = new HashMap<Integer, String>();
+    public static int randomPick = (int) (Math.random() * (48) + 0);
+    public static int tirageNb;
 
 
     public static void main(String[] args) {
 
-        creationJeu(jeu);
-        tirage(jeu, randomPioche, nbTirage);
+        gameCreation(game);
+        tirage(jeu, randomPick, nbTirage);
         jeuJoueur(jeu, 3);
     }
 
@@ -29,7 +29,7 @@ public class JeuDeCarte {
         return tirage;
     }
 
-    public static void creationJeu(HashMap<Integer, String> jeu) {
+    public static void gameCreation(HashMap<Integer, String> jeu) {
         for (int i = 0; i < 48; i++) {
             String carte = creationCarte();
             jeu.put(i, carte);
@@ -68,7 +68,7 @@ public class JeuDeCarte {
         ArrayList<String> main = new ArrayList<String>();
 
         for (int i = 0; i < nbdeCarteàTirer; i++) {
-            main.add(tirage(jeu, randomPioche, nbTirage));
+            main.add(tirage(jeu, randomPick, nbTirage));
         }
         afficherMain(jeu, main);
         return main;
