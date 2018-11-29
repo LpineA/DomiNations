@@ -11,6 +11,7 @@ import java.util.List;
 
 
 public class Card {
+
 	protected static Card[] tableau = new Card[48];
 	protected int numberOnCard;
 	protected int numberCrowns1;
@@ -51,13 +52,15 @@ public class Card {
 		}
 		return tableau;
 	}catch(
-	IOException ioe)
+			IOException ioe)
 	{
 		System.out.println("Try again r tard");
 		ioe.printStackTrace();
 	}
-	return tableau;
+		return tableau;
     }
+    
+    
 	private static Card createCard(String[] metadata){
 		int crown1 = Integer.parseInt(metadata[0]); 
 		String Ter1 = metadata[1];
@@ -83,7 +86,7 @@ public class Card {
     
   //avec param  
     public Card(int pnumoncard, int pnumbercrown1, int pnumbercrown2, String terrain1, String terrain2){
-    	System.out.println("Création d'une ville avec des paramètres !");
+    	System.out.println("CrÃ©ation d'une ville avec des paramÃ©tres !");
     	String Terrain1=terrain1;
     	System.out.println(Terrain1);
    	  	String Terrain2=terrain2; 
@@ -99,6 +102,7 @@ public class Card {
     {
       return numberCrowns1;
     }
+    
     public int getNumC2()
     {
       return numberCrowns2;
@@ -109,14 +113,12 @@ public class Card {
       return Terrain1;
     }
 	
-
     public String getNomTerrain2()
     {
       return Terrain2;
     }
-	
 
-	  public String decrisToi(){
+	public String decrisToi(){
 		    return "\t"+this.numberOnCard+" est une carte avec un terraim  de type "+ this.Terrain1 + ", elle comporte courone: "+this.numberCrowns1+" courones(s) => elle est donc de avec un seoncd cote : "+this.Terrain2+"contenant "+this.numberCrowns2+"courones" ;
 		  }
 
