@@ -18,7 +18,7 @@ public class Card {
 	String Terrain1;
 	String Terrain2;
 
-	
+ 	
 	
 	
 
