@@ -87,13 +87,13 @@ public class Card {
   //avec param  
     public Card(int pnumoncard, int pnumbercrown1, int pnumbercrown2, String terrain1, String terrain2){
     	System.out.println("Création d'une ville avec des paramétres !");
-    	String Terrain1=terrain1;
+    	String Terrain1 = terrain1;
     	System.out.println(Terrain1);
-   	  	String Terrain2=terrain2; 
-   	 System.out.println(Terrain2);
+   	  	String Terrain2 = terrain2; 
+   	  	System.out.println(Terrain2);
     	numberOnCard=pnumoncard;
-   	  	numberCrowns1=pnumbercrown1;
-   	  	numberCrowns2=pnumbercrown2;
+   	  	numberCrowns1 = pnumbercrown1;
+   	  	numberCrowns2 = pnumbercrown2;
    	  
     	
     }

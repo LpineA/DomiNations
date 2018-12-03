@@ -27,6 +27,7 @@ public class JeuDeCarte {
         String tirage = new String();
         tirage = typeDomino[random] + " " + typeDomino[randombis];
         return tirage;
+        
     }
 
     public static void creationJeu(HashMap<Integer, String> jeu) {
