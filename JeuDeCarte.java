@@ -20,7 +20,7 @@ public class JeuDeCarte {
 
     public static String creationCarte() {
 
-        String typeDomino[] = {"terre", "forÃªt", "mer", "sable"};
+        String typeDomino[] = {"terre", "forêt", "mer", "sable"};
 
         int random = (int) (Math.random() * (3));
         int randombis = (int) (Math.random() * (3));
@@ -58,17 +58,17 @@ public class JeuDeCarte {
 
     public static void afficherMain(HashMap<Integer, String> jeu, ArrayList<String> toDisplay) {
 
-        System.out.println("Voici les cartes que vous possÃ©dez dans vore jeu : ");
+        System.out.println("Voici les cartes que vous possédez dans vore jeu : ");
         for (int i = 0; i < toDisplay.size(); i++) {
             System.out.println("Une carte de " + toDisplay.get(i));
         }
     }
 
-    public static ArrayList<String> jeuJoueur(HashMap<Integer, String> jeu, int nbdeCarteÃ Tirer) {
+    public static ArrayList<String> jeuJoueur(HashMap<Integer, String> jeu, int nbdeCarteàTirer) {
 
         ArrayList<String> main = new ArrayList<String>();
 
-        for (int i = 0; i < nbdeCarteÃ Tirer; i++) {
+        for (int i = 0; i < nbdeCarteàTirer; i++) {
             main.add(tirage(jeu, randomPioche, nbTirage));
         }
         afficherMain(jeu, main);

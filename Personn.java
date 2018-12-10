@@ -3,9 +3,12 @@ import java.util.*;
 
 public class Personn {
 	String pseudo;
-	int nbreRois;
+		int nbreRois;
 	int totalnbrePlayers; 
-	ArrayList <Card> piocheJoueur  = new ArrayList <Card>();
+	public ArrayList <Card> piocheJoueur  = new ArrayList <Card>();
+	protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
+	
+	
 
 	
 	
@@ -47,5 +50,20 @@ public class Personn {
 	public void getCard () {
 		System.out.println(piocheJoueur.get(0).getNumCards());
 	}
+	
+	public static Personn findPlayerByPsuedo(String pseudo) {
+		
+		Personn h = null;
+		for (int i = 0; i < nosJoueur.size(); i++) {
+			if (nosJoueur.get(i).getPseudo() == pseudo) {
+				h = (nosJoueur.get(i));
+			}
+			
+		}
+		
+		return h;
+		
+	}
+	
 	
 }

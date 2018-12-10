@@ -1,4 +1,4 @@
-package com.sdz.test;
+ package com.sdz.test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class Card {
 	String Terrain2;
 
 	public static ArrayList<Card> Openfile() {
-		Path pathToFile = Paths.get(".//dominos.csv");
+		Path pathToFile = Paths.get("C:\\Users\\Jean-Baptiste\\Desktop\\dominos.csv");
 
 		try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
 			// read the first line from the text file
@@ -61,7 +61,7 @@ public class Card {
 	}
 
 	public Card(int pnumoncard, int pnumbercrown1, int pnumbercrown2, String terrain1, String terrain2) {
-		System.out.println("CrÃ©ation d'une ville avec des paramÃ¨tres !");
+		System.out.println("Création d'une ville avec des paramètres !");
 		Terrain1 = terrain1;
 		System.out.println(Terrain1);
 		Terrain2 = terrain2;
@@ -98,7 +98,7 @@ public class Card {
 				+ this.numberCrowns2 + "courones";
 	}
 
-	public static ArrayList<Card> suprimerCartes(int number) {
+	public static void suprimerCartes(int number) {
 		int cards = number;
 		int cardLeft = tableau.size();
 		while (cards > 0) {
@@ -108,25 +108,26 @@ public class Card {
 			cards--;
 			cardLeft--;
 		}
-		return tableau2;
+		
 	}
 
-	static ArrayList<Integer> mÃ©moire = new ArrayList<Integer>();
-	static ArrayList<Card> piocheJoueur = new ArrayList<Card>();
+	static ArrayList<Integer> mémoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
+	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 
 	public static void tirageCarte(int nbJoueurs) {
 
 		for (int i = 0; i < nbJoueurs; i++) {
 			int random = (int) (Math.random() * (tableau2.size() - 1));
 			System.out.println((tableau2.get(random)).decrisToi());
-			mÃ©moire.add(tableau2.get(random).getNumCards());
+			mémoire.add(tableau2.get(random).getNumCards());
 			piocheJoueur.add(tableau2.get(random));
 			tableau2.remove(random);
 
 		}
+		
 	}
 
-	public Card returnCard (int number) {
+	public static Card returnCard (int number) {
 		
 		Card h = null;
 		for (int i = 0; i < tableau2.size(); i++) {

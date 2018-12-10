@@ -12,15 +12,11 @@ public class Presentation {
 	static Personn Joueur2;
 	static Personn Joueur3;
 	static Personn Joueur4; 
-	public static ArrayList< String> listeJoueur = new ArrayList ();
-
-
+	public static ArrayList< String> listeJoueur = new ArrayList<String> ();
+	protected static ArrayList<Personn> nosJoueur = new ArrayList<Personn>();
 	
-	static HashMap<Integer, String> jeu = JeuDeCarte.jeu;
 
-	public static void main(String[] args) {
-		preparation();
-	}
+
 	
 	public static void preparation () {
 		Scanner scan = new Scanner(System.in);
@@ -28,7 +24,7 @@ public class Presentation {
 		System.out.println("#----------------------------------------------#" + "\n" );
 		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
 		System.out.println("#----------------------------------------------#" + "\n" );
-		System.out.println("CommenÃ§ons par dÃ©finir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
+		System.out.println("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
 		try {
 		nbJoueurs = scan.nextInt();
 		}
@@ -48,17 +44,21 @@ public class Presentation {
 		}
 		
 		if (nbJoueurs == 2) {
+			Scanner scane = new Scanner(System.in);
 			Personn Joueur1= new Personn();
 			System.out.println("Entrez le pseudo du premier joueur");
-			pseudoJoueur1 =scan.next();
+			pseudoJoueur1 =scane.next();
 			Joueur1.setPseudo(pseudoJoueur1);
 			
 			Personn Joueur2 = new Personn();
 			System.out.println("Entrez le pseudo du second joueur");
-			pseudoJoueur2 = scan.next();
+			pseudoJoueur2 = scane.next();
 			Joueur2.setPseudo(pseudoJoueur2);
 			
-			JeuDeCarte.removeCard(jeu, 24);
+			
+			
+			Joueur1.setnbreRois(nbJoueurs);
+			Joueur2.setnbreRois(nbJoueurs);
 			
 			Joueur1.setnbreRois(nbJoueurs);
 			Joueur2.setnbreRois(nbJoueurs);
@@ -66,79 +66,104 @@ public class Presentation {
 			Joueur1.settotalNumberPlayers(nbJoueurs);
 			Joueur2.settotalNumberPlayers(nbJoueurs);
 			
+			nosJoueur.add(Joueur1);
+			nosJoueur.add(Joueur2);
+			
 			listeJoueur.add(pseudoJoueur1);
 			listeJoueur.add(pseudoJoueur2);
+			
+			
+			
+			
 		}
 		
 		if (nbJoueurs == 3) {
-			Personn Joueur1 = new Personn();
+			Scanner scane = new Scanner(System.in);
+			Joueur1 = new Personn();
 			System.out.println("Entrez le pseudo du premier joueur");
-			pseudoJoueur1 = scan.nextLine();
+			pseudoJoueur1 = scane.nextLine();
 			Joueur1.setPseudo(pseudoJoueur1);
 			
-			Personn Joueur2 = new Personn();
+			Joueur2 = new Personn();
 			System.out.println("Entrez le pseudo du second joueur");
-			pseudoJoueur2 = scan.nextLine();
+			pseudoJoueur2 = scane.nextLine();
 			Joueur2.setPseudo(pseudoJoueur2);
 			
-			Personn Joueur3 = new Personn();
-			System.out.println("Entrez le pseudo du troisiÃ¨me joueur");
-			pseudoJoueur3 = scan.nextLine();
+			Joueur3 = new Personn();
+			System.out.println("Entrez le pseudo du troisième joueur");
+			pseudoJoueur3 = scane.nextLine();
 			Joueur3.setPseudo(pseudoJoueur3);
 			
-			JeuDeCarte.removeCard(jeu, 12);
 			
 			
-			Joueur1.setnbreRois(nbJoueurs);
-			Joueur2.setnbreRois(nbJoueurs);
-			Joueur3.setnbreRois(nbJoueurs);
+			
+			Joueur1.setnbreRois(1);
+			Joueur2.setnbreRois(1);
+			Joueur3.setnbreRois(1);
 			
 			Joueur1.settotalNumberPlayers(nbJoueurs);
 			Joueur2.settotalNumberPlayers(nbJoueurs);
 			Joueur3.settotalNumberPlayers(nbJoueurs);
 			
+			nosJoueur.add(Joueur1);
+			nosJoueur.add(Joueur2);
+			nosJoueur.add(Joueur3);
+			
 			listeJoueur.add(pseudoJoueur1);
 			listeJoueur.add(pseudoJoueur2);
 			listeJoueur.add(pseudoJoueur3);
+			
+			
+			
 			
 
 		}
 		
 		if (nbJoueurs == 4 ) {
-			Personn Joueur1 = new Personn();
-			System.out.println("Entrez le pseudo du premier joueur");
-			pseudoJoueur1 = scan.nextLine();
+			Scanner scane = new Scanner(System.in);
+			Joueur1 = new Personn();
+			System.out.println("Entrez le pseudo du Premier joueur");
+			pseudoJoueur1 = scane.nextLine();
 			Joueur1.setPseudo(pseudoJoueur1);
 			
-			Personn Joueur2 = new Personn();
+			Joueur2 = new Personn();
 			System.out.println("Entrez le pseudo du second joueur");
-			pseudoJoueur2 = scan.nextLine();
+			pseudoJoueur2 = scane.nextLine();
 			Joueur2.setPseudo(pseudoJoueur2);
 			
-			Personn Joueur3 = new Personn();
-			System.out.println("Entrez le pseudo du troisiÃ¨me joueur");
-			pseudoJoueur3 = scan.nextLine();
+			Joueur3 = new Personn();
+			System.out.println("Entrez le pseudo du troisième joueur");
+			pseudoJoueur3 = scane.nextLine();
 			Joueur3.setPseudo(pseudoJoueur3);
 			
-			Personn Joueur4 = new Personn();
-			System.out.println("Entrez le pseudo du quatriÃ¨me joueur");
-			pseudoJoueur4 = scan.nextLine();
+			Joueur4 = new Personn();
+			System.out.println("Entrez le pseudo du quatrième joueur");
+			pseudoJoueur4 = scane.nextLine();
 			Joueur4.setPseudo(pseudoJoueur4);
 			
-			Joueur1.setnbreRois(nbJoueurs);
-			Joueur2.setnbreRois(nbJoueurs);
-			Joueur3.setnbreRois(nbJoueurs);
-			Joueur4.setnbreRois(nbJoueurs);
+			Joueur1.setnbreRois(1);
+			Joueur2.setnbreRois(1);
+			Joueur3.setnbreRois(1);
+			Joueur4.setnbreRois(1);
 			
 			Joueur1.settotalNumberPlayers(nbJoueurs);
 			Joueur2.settotalNumberPlayers(nbJoueurs);
 			Joueur3.settotalNumberPlayers(nbJoueurs);
 			Joueur4.settotalNumberPlayers(nbJoueurs);
 			
+			nosJoueur.add(Joueur1);
+			nosJoueur.add(Joueur2);
+			nosJoueur.add(Joueur3);
+			nosJoueur.add(Joueur4);
+			
+			
 			listeJoueur.add(pseudoJoueur1);
 			listeJoueur.add(pseudoJoueur2);
 			listeJoueur.add(pseudoJoueur3);
 			listeJoueur.add(pseudoJoueur4);
+			
+			
+			
 		}
 		
 
