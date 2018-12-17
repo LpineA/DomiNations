@@ -40,6 +40,7 @@ public class Card {
 				line = br.readLine();
 			}
 			return tableau;
+			
 		} catch (IOException ioe) {
 			System.out.println("Try again r tard");
 			ioe.printStackTrace();
@@ -61,7 +62,7 @@ public class Card {
 	}
 
 	public Card(int pnumoncard, int pnumbercrown1, int pnumbercrown2, String terrain1, String terrain2) {
-		System.out.println("Création d'une ville avec des paramètres !");
+		System.out.println("Crï¿½ation d'une ville avec des paramï¿½tres !");
 		Terrain1 = terrain1;
 		System.out.println(Terrain1);
 		Terrain2 = terrain2;
@@ -111,7 +112,7 @@ public class Card {
 		
 	}
 
-	static ArrayList<Integer> mémoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
+	static ArrayList<Integer> mÃ©moire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
 	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 
 	public static void tirageCarte(int nbJoueurs) {
@@ -119,7 +120,7 @@ public class Card {
 		for (int i = 0; i < nbJoueurs; i++) {
 			int random = (int) (Math.random() * (tableau2.size() - 1));
 			System.out.println((tableau2.get(random)).decrisToi());
-			mémoire.add(tableau2.get(random).getNumCards());
+			mÃ©moire.add(tableau2.get(random).getNumCards());
 			piocheJoueur.add(tableau2.get(random));
 			tableau2.remove(random);
 
@@ -141,5 +142,6 @@ public class Card {
 		
 	}
 }
+
 
 	

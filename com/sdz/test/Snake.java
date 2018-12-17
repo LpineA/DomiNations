@@ -1,4 +1,4 @@
-package snake;
+package com.sdz.test;
 import javax.swing.JFrame;
 
 

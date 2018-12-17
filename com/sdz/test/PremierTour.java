@@ -13,7 +13,7 @@ public class PremierTour extends Presentation{
 	static int randomPioche = JeuDeCarte.randomPioche;
 	static int nbTirage = JeuDeCarte.nbTirage;	
 	static ArrayList<String> listeJoueurs = Presentation.listeJoueur;
-	static ArrayList<Integer> mémoire = Card.mémoire;
+	static ArrayList<Integer> mÃ©moire = Card.mÃ©moire;
 	static ArrayList <Card> piocheJoueur = Card.piocheJoueur;
 	protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
 	 static Personn Joueur1 = Presentation.Joueur1;
@@ -46,17 +46,17 @@ public class PremierTour extends Presentation{
 		   // You can have any number of case statements.
 		
 		}
-		System.out.println("Les cartes que vous avez piochées sont : ");
+		System.out.println("Les cartes que vous avez piochï¿½es sont : ");
 		
-		 for (int i =0;i< mémoire.size();i++){    
-			   System.out.println(mémoire.get(i));
+		 for (int i =0;i< mÃ©moire.size();i++){    
+			   System.out.println(mÃ©moire.get(i));
 				}	
 	}
 	
 	public static void choixCarte ( int nbJoueurs) {
 		 
 		int  choixCarte = 0;
-		while (mémoire.size() > 0) {
+		while (mÃ©moire.size() > 0) {
 				
 				int i = nbJoueurs;
 				
@@ -66,7 +66,7 @@ public class PremierTour extends Presentation{
 					String currentPlayer=listeJoueurs.get(random);
 					listeJoueur.remove(random);
 					System.out.println("Nous allons commencer avec " + currentPlayer);
-					System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
+					System.out.println("Quelle est la numÃ©ro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
 						choixCarte = scan.nextInt();
 					}
@@ -75,15 +75,15 @@ public class PremierTour extends Presentation{
 						System.out.println("Veuillez entrer un nom de carte valide");
 					}
 					
-					if (mémoire.contains(choixCarte) == false){
-						System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
+					if (mÃ©moire.contains(choixCarte) == false){
+						System.out.println("Le numï¿½ro de la carte que vous avez entrÃ©, n'est pas disponible ! Veuillez entrer un numï¿½ro de carte valide");
 					}
 					
 					else {
 						
 						Personn player= Personn.findPlayerByPsuedo(currentPlayer);  // il faut ces ligne pour que ce soit random et pas direct player 1
 						player.ajouterCarte(Card.returnCard(choixCarte));
-						mémoire.remove(mémoire.indexOf(choixCarte));
+						mÃ©moire.remove(mÃ©moire.indexOf(choixCarte));
 					}
 					
 				
@@ -98,57 +98,57 @@ public class PremierTour extends Presentation{
 	}
 
 	
-	public static void choixCarte3Players (ArrayList <Integer> mémoire) {
+	public static void choixCarte3Players (ArrayList <Integer> mÃ©moire) {
 		
-		int numéroCarte = 0; 
+		int numÃ©roCarte = 0; 
 
 		
 		try {
 			System.out.println("Quelle est la carte sur laquelle voulez vous poser votre roi ? ");
-			numéroCarte = scan.nextInt();
+			numÃ©roCarte = scan.nextInt();
 		}
 		
 		catch (Exception e ) {
-			System.out.println("Veuillez choisir un numéro de carte indiquée ci-dessus");
-			choixCarte3Players(mémoire);
+			System.out.println("Veuillez choisir un numï¿½ro de carte indiquï¿½e ci-dessus");
+			choixCarte3Players(mÃ©moire);
 		}
 		
-		if (mémoire.contains(numéroCarte) == false) {
-			System.out.println("Le numéro de la carte indiquée n'est pas présent dans les cartes qui sont sorties ");
+		if (mÃ©moire.contains(numÃ©roCarte) == false) {
+			System.out.println("Le numï¿½ro de la carte indiquï¿½e n'est pas prï¿½sent dans les cartes qui sont sorties ");
 		}
 		
 		else {
-			mémoire.remove(mémoire.indexOf(numéroCarte));
+			mÃ©moire.remove(mÃ©moire.indexOf(numÃ©roCarte));
 			Personn Joueur1 = Presentation.Joueur1;
 			
-			Joueur1.ajouterCarte(Card.returnCard(numéroCarte));
+			Joueur1.ajouterCarte(Card.returnCard(numÃ©roCarte));
 			}
 			
 			System.out.println("Merci " + pseudoJoueur1 + " au tour de " + pseudoJoueur2 + " ! ");
 			System.out.print("Les cartes disponibles sont ");
-			for (int i = 0 ; i < mémoire.size() ; i++) {
-				System.out.print(mémoire.get(i) + " , ");
+			for (int i = 0 ; i < mÃ©moire.size() ; i++) {
+				System.out.print(mÃ©moire.get(i) + " , ");
 			}
 			
 			System.out.println(pseudoJoueur2 + " veuilliez choisir une carte ");
 			try {
-				numéroCarte = scan.nextInt();
+				numÃ©roCarte = scan.nextInt();
 			}
 			
 			catch (Exception e) {
-				System.out.println("Veuillez entrez un numéro de carte valable ");
+				System.out.println("Veuillez entrez un numï¿½ro de carte valable ");
 			}
 			
-			if (mémoire.contains(numéroCarte) == false) {
-				System.out.println("Le numéro de la carte que vous venez de rentrer n'est pas dans la liste");
+			if (mÃ©moire.contains(numÃ©roCarte) == false) {
+				System.out.println("Le numÃ©ro de la carte que vous venez de rentrer n'est pas dans la liste");
 				// faire un fonction avec boucle 
 			}
 			
 			else {
-				mémoire.remove(mémoire.indexOf(numéroCarte));
+				mÃ©moire.remove(mÃ©moire.indexOf(numÃ©roCarte));
 				System.out.println("Merci " + pseudoJoueur2 + ", au tour de " + pseudoJoueur3);
-				System.out.println("Malheurseuement il ne reste qu'une carte, "+ pseudoJoueur3 + " votre carte sera donc " + mémoire.get(0));
-				System.out.println("Nous allons maintenant à la dispositon des cartes sur vos plateaux respectifs");
+				System.out.println("Malheurseuement il ne reste qu'une carte, "+ pseudoJoueur3 + " votre carte sera donc " + mÃ©moire.get(0));
+				System.out.println("Nous allons maintenant Ã  la dispositon des cartes sur vos plateaux respectifs");
 			}
 			
 			

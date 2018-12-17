@@ -33,8 +33,8 @@ public class MainGame {
 		
 		//Card.tirageCarte(nbjoueur);
 		PremierTour.piocheRoiJoueurs ( nbjoueur);
-		ArrayList<Integer> mémoire= Card.mémoire;
-		System.out.println(Card.mémoire.size());
+		ArrayList<Integer> mÃ©moire= Card.mÃ©moire;
+		System.out.println(Card.mÃ©moire.size());
 		
 		
 		

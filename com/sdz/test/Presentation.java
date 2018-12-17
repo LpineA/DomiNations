@@ -24,7 +24,7 @@ public class Presentation {
 		System.out.println("#----------------------------------------------#" + "\n" );
 		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
 		System.out.println("#----------------------------------------------#" + "\n" );
-		System.out.println("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
+		System.out.println("Commenï¿½ons par dï¿½finir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
 		try {
 		nbJoueurs = scan.nextInt();
 		}
@@ -90,7 +90,7 @@ public class Presentation {
 			Joueur2.setPseudo(pseudoJoueur2);
 			
 			Joueur3 = new Personn();
-			System.out.println("Entrez le pseudo du troisième joueur");
+			System.out.println("Entrez le pseudo du troisiï¿½me joueur");
 			pseudoJoueur3 = scane.nextLine();
 			Joueur3.setPseudo(pseudoJoueur3);
 			
@@ -132,12 +132,12 @@ public class Presentation {
 			Joueur2.setPseudo(pseudoJoueur2);
 			
 			Joueur3 = new Personn();
-			System.out.println("Entrez le pseudo du troisième joueur");
+			System.out.println("Entrez le pseudo du troisiï¿½me joueur");
 			pseudoJoueur3 = scane.nextLine();
 			Joueur3.setPseudo(pseudoJoueur3);
 			
 			Joueur4 = new Personn();
-			System.out.println("Entrez le pseudo du quatrième joueur");
+			System.out.println("Entrez le pseudo du quatriï¿½me joueur");
 			pseudoJoueur4 = scane.nextLine();
 			Joueur4.setPseudo(pseudoJoueur4);
 			
