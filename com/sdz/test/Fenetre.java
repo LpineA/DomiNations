@@ -21,7 +21,7 @@ public class Fenetre extends JFrame implements KeyListener{
    JPanel container = new JPanel();
    public static int largeurFen =200;
    public static int HauteurFen =200;
-   Serpent anaconda;
+   //Serpent anaconda;
    
    
      public Fenetre() {
@@ -39,11 +39,11 @@ public class Fenetre extends JFrame implements KeyListener{
 	   this.addKeyListener(this);
 	   this.setVisible(true);
 	   this.setContentPane(container);
-	   anaconda=new Serpent (this.getGraphics(),4);
+	//   anaconda =new Serpent (this.getGraphics(),4);
    }
    
    public void StartGame() {
-	   anaconda.jouer();
+	 //  anaconda.jouer();
    }
   @Override 
    public void keyPressed(KeyEvent arg0) {

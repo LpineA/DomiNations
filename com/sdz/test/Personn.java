@@ -51,7 +51,7 @@ public class Personn {
 		System.out.println(piocheJoueur.get(0).getNumCards());
 	}
 	
-	public static Personn findPlayerByPsuedo(String pseudo) {
+	public static Personn findPlayerByPseudo(String pseudo) {
 		
 		Personn h = null;
 		for (int i = 0; i < nosJoueur.size(); i++) {

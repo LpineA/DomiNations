@@ -11,7 +11,8 @@ public class MainGame {
 		
 		Presentation.preparation();
 		int nbjoueur= Presentation.nbJoueurs;
-		System.out.println("Il y a bien "+nbjoueur+"joueur");
+		System.out.println("Il y a bien "+ nbjoueur +" joueurs");
+		
 		switch(nbjoueur) {
 		   case 2 :
 			   Card.suprimerCartes(24);
@@ -21,26 +22,28 @@ public class MainGame {
 			  Card.suprimerCartes(36);
 		      break; // optional
 		   case 4 :
-			  Card.tableau2=Card.tableau;
+			  Card.tableau2 = Card.tableau;
 			      break; //
+			      
 		   // You can have any number of case statements.
-		   
 		}
+		
 		//ArrayList<Card> tableaux2 = Card.tableau2;
 		System.out.println(Card.tableau2.size());
 		
 		
 		
 		//Card.tirageCarte(nbjoueur);
-		PremierTour.piocheRoiJoueurs ( nbjoueur);
+		PremierTour.piocheRoiJoueurs (nbjoueur);
 		ArrayList<Integer> mémoire= Card.mémoire;
-		System.out.println(Card.mémoire.size());
 		
 		
 		
 		
 		 // ici on fais une pioche de carte 
-		//PremierTour.choixCarte(nbjoueur);
+		PremierTour.choixCarte(nbjoueur);
+		
+		
 		
 		
 		// ici on a juste un switch case pour recuperer le bon nombre de cartes.

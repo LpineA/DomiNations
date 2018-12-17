@@ -21,8 +21,9 @@ public class Card {
 	String Terrain2;
 
 	public static ArrayList<Card> Openfile() {
-		Path pathToFile = Paths.get("C:\\Users\\Jean-Baptiste\\Desktop\\dominos.csv");
-
+				
+		Path pathToFile = Paths.get("dominos.csv");
+			
 		try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
 			// read the first line from the text file
 			String line = br.readLine();
@@ -45,9 +46,9 @@ public class Card {
 			System.out.println("Try again r tard");
 			ioe.printStackTrace();
 		}
-		return tableau;
+		return tableau; 
 	}
-
+	
 	private static Card createCard(String[] metadata) {
 		int crown1 = Integer.parseInt(metadata[0]);
 		String Ter1 = metadata[1];
@@ -62,7 +63,7 @@ public class Card {
 	}
 
 	public Card(int pnumoncard, int pnumbercrown1, int pnumbercrown2, String terrain1, String terrain2) {
-		System.out.println("Cr�ation d'une ville avec des param�tres !");
+		System.out.println("Création d'une ville avec des paramètres !");
 		Terrain1 = terrain1;
 		System.out.println(Terrain1);
 		Terrain2 = terrain2;

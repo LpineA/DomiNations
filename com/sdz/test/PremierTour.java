@@ -46,26 +46,24 @@ public class PremierTour extends Presentation{
 		   // You can have any number of case statements.
 		
 		}
-		System.out.println("Les cartes que vous avez pioch�es sont : ");
+		System.out.println("Les cartes que vous avez piochées sont : ");
 		
 		 for (int i =0;i< mémoire.size();i++){    
 			   System.out.println(mémoire.get(i));
 				}	
 	}
 	
-	public static void choixCarte ( int nbJoueurs) {
+	public static void choixCarte (int nbJoueurs) {
 		 
 		int  choixCarte = 0;
-		while (mémoire.size() > 0) {
-				
-				int i = nbJoueurs;
-				
-				if(nbJoueurs==3 || nbJoueurs==4) {
+		int i = nbJoueurs;
+		while (mémoire.size() > 0) {				
+				if(nbJoueurs==3 || nbJoueurs==4 || nbJoueurs ==2) {
 					int random = (int) (Math.random() * (i));
 					i--; 
-					String currentPlayer=listeJoueurs.get(random);
+					String currentPlayer = listeJoueurs.get(random);
 					listeJoueur.remove(random);
-					System.out.println("Nous allons commencer avec " + currentPlayer);
+					System.out.println("Nous allons jouer avec " + currentPlayer);
 					System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
 						choixCarte = scan.nextInt();
@@ -76,18 +74,18 @@ public class PremierTour extends Presentation{
 					}
 					
 					if (mémoire.contains(choixCarte) == false){
-						System.out.println("Le num�ro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un num�ro de carte valide");
+						System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
 					}
 					
 					else {
 						
-						Personn player= Personn.findPlayerByPsuedo(currentPlayer);  // il faut ces ligne pour que ce soit random et pas direct player 1
+						Personn player= Personn.findPlayerByPseudo(currentPlayer);  //il faut ces ligne pour que ce soit random et pas direct player 1
 						player.ajouterCarte(Card.returnCard(choixCarte));
 						mémoire.remove(mémoire.indexOf(choixCarte));
 					}
 					
 				
-				}
+			}
 				else {
 					System.out.println("le nombre de joueur est 2");
 				}
