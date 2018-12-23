@@ -86,7 +86,6 @@ public class PremierTour extends Presentation{
 					if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
 						System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
 					}
-					
 					else {
 						listeJoueurs.remove(random);
 						Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
