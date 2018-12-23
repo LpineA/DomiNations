@@ -113,7 +113,7 @@ public class Card {
 		
 	}
 
-	static ArrayList<Integer> mémoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
+	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
 	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 
 	public static void tirageCarte(int nbJoueurs) {
@@ -121,7 +121,7 @@ public class Card {
 		for (int i = 0; i < nbJoueurs; i++) {
 			int random = (int) (Math.random() * (tableau2.size() - 1));
 			System.out.println((tableau2.get(random)).decrisToi());
-			mémoire.add(tableau2.get(random).getNumCards());
+			memoire.add(tableau2.get(random).getNumCards());
 			piocheJoueur.add(tableau2.get(random));
 			tableau2.remove(random);
 
@@ -132,9 +132,10 @@ public class Card {
 	public static Card returnCard (int number) {
 		
 		Card h = null;
-		for (int i = 0; i < tableau2.size(); i++) {
-			if (tableau2.get(i).getNumCards() == number) {
-				h = (tableau2.get(i));
+		for (int i = 0; i < piocheJoueur.size(); i++) {
+			if (piocheJoueur.get(i).getNumCards() == number) {
+				h = (piocheJoueur.get(i));
+				System.out.println("Great !!!!");
 			}
 			
 		}
@@ -142,7 +143,13 @@ public class Card {
 		return h;
 		
 	}
+	
+	
+public static void PlacerCarte () {
+		
+		
 }
 
+}
 
 	
