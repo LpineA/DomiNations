@@ -103,6 +103,7 @@ public class PremierTour extends Presentation{
 //						memoire2.remove(memoire2.indexOf(choixCarte));
 						
 						
+						
 					}
 					
 					
