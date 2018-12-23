@@ -1,6 +1,7 @@
 package com.sdz.test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainGame {
 
@@ -42,6 +43,7 @@ public class MainGame {
 		
 		ArrayList<Personn> nosJoueurs= Presentation.nosJoueur;
 		for(Personn joueurs: nosJoueurs) {
+<<<<<<< HEAD
 			System.out.println(joueurs.getPseudo());	
 			System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
 			System.out.println(joueurs.getOrdreTour()+"\n");
@@ -62,6 +64,25 @@ public class MainGame {
 		/*System.out.println("Ici nous avons finis le premier tour du jeu, nous alons donc continuer, et pour faire ceci nous allons rechoisir des cartes ! ");
 		PremierTour.piocheRoiJoueurs(nbjoueur);*/
 ///		
+=======
+		System.out.println(joueurs.getPseudo());	
+		
+		
+		if (nbjoueur==3 || nbjoueur==4) {
+		System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
+		System.out.println(joueurs.getOrdreTour().get(0)+"\n");
+		
+		}
+		else if (nbjoueur==2) {
+			System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
+			System.out.println(joueurs.getPiocheJoueur().get(1).getNumCards());
+			Collections.sort(joueurs.getOrdreTour()); 
+			System.out.println(joueurs.getOrdreTour().get(0)+"\n");
+			System.out.println(joueurs.getOrdreTour().get(1)+"\n");
+			
+			}
+		
+>>>>>>> 6479d3844242eeccf94fcd9b6dade92a00fe56b3
 		
 		}
 		

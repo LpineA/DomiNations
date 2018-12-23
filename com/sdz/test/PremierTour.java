@@ -98,6 +98,14 @@ public class PremierTour extends Presentation{
 						
 						player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
 //						memoire2.remove(memoire2.indexOf(choixCarte));
+<<<<<<< HEAD
+=======
+						
+						
+						
+					}
+					
+>>>>>>> 6479d3844242eeccf94fcd9b6dade92a00fe56b3
 					
 					}
 			}	
