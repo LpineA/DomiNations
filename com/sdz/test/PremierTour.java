@@ -33,8 +33,6 @@ public class PremierTour extends Presentation{
 
 	
 	public static void piocheRoiJoueurs (int nbplayers) {
-		System.out.println("Nous allons commencer !! \n");
-		
 		System.out.println("...........");
 		
 		switch(nbplayers) {
@@ -52,7 +50,7 @@ public class PremierTour extends Presentation{
 		
 		}
 		System.out.println("Les cartes que vous avez piochées sont : ");
-		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  
+		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  // ordre croissant à mettre en place ! 
 		 for (int i =0;i< memoires.size();i++){    
 			   System.out.println(memoires.get(i));
 				}	
@@ -100,19 +98,12 @@ public class PremierTour extends Presentation{
 						
 						player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
 //						memoire2.remove(memoire2.indexOf(choixCarte));
-						
-						
+					
 					}
-					
-					
-					
-				
 			}	
-				
 		}
 		memoires.removeAll(memoires);
 	}
-
 	
 	public static void choixCarte3Players (ArrayList <String> ordre, int nbJoueurs) {
 		

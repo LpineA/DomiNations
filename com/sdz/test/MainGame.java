@@ -7,6 +7,7 @@ public class MainGame {
 	public static void main(String[] args) {
 		Card.Openfile();
 		ArrayList<Card> tableaux = Card.tableau;
+		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
 
 		
 		Presentation.preparation();
@@ -41,9 +42,26 @@ public class MainGame {
 		
 		ArrayList<Personn> nosJoueurs= Presentation.nosJoueur;
 		for(Personn joueurs: nosJoueurs) {
-		System.out.println(joueurs.getPseudo());	
-		System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
-		System.out.println(joueurs.getOrdreTour()+"\n");	
+			System.out.println(joueurs.getPseudo());	
+			System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
+			System.out.println(joueurs.getOrdreTour()+"\n");
+		}
+			
+		
+			PremierTour.piocheRoiJoueurs(nbjoueur);
+			Tour.choixCarte(nbjoueur);
+			
+			
+			
+		/*	
+			
+			String currentPlayer = Tour.getTheOrderOfPlaying(1);
+		
+			System.out.println(Personn.findPlayerByPseudo(currentPlayer).getPseudo());
+			System.out.println("@-------Fin de l'affichage de la liste listeJoueurs--------------@");*/
+		/*System.out.println("Ici nous avons finis le premier tour du jeu, nous alons donc continuer, et pour faire ceci nous allons rechoisir des cartes ! ");
+		PremierTour.piocheRoiJoueurs(nbjoueur);*/
+///		
 		
 		}
 		
@@ -74,4 +92,4 @@ public class MainGame {
 		
 	
 	}
-}
+

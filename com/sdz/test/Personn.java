@@ -49,7 +49,6 @@ public class Personn {
 		if(totalNumberPlayers == 2) {
 			nbreRois = 2;
 		}
-		
 		if (totalNumberPlayers == 3 || totalNumberPlayers == 4) {
 			nbreRois = 1;
 		}

@@ -14,6 +14,8 @@ import java.lang.*;
 public class Card {
 	protected static ArrayList<Card> tableau = new ArrayList<Card>();
 	protected static ArrayList<Card> tableau2 = new ArrayList<Card>();
+	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
+	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 	protected int numberOnCard;
 	protected int numberCrowns1;
 	protected int numberCrowns2;
@@ -95,9 +97,9 @@ public class Card {
 
 	public String decrisToi() {
 		return "\t" + this.numberOnCard + " est une carte avec un terraim  de type " + this.Terrain1
-				+ ", elle comporte courone: " + this.numberCrowns1
-				+ " courones(s) => elle est donc de avec un seoncd cote : " + this.Terrain2 + "contenant "
-				+ this.numberCrowns2 + "courones";
+				+ ", elle comporte courrone: " + this.numberCrowns1
+				+ " courrones(s) => elle est donc de avec un seoncd cote : " + this.Terrain2 + "contenant "
+				+ this.numberCrowns2 + "couronnes";
 	}
 
 	public static void suprimerCartes(int number) {
@@ -112,9 +114,6 @@ public class Card {
 		}
 		
 	}
-
-	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
-	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 
 	public static void tirageCarte(int nbJoueurs) {
 
@@ -143,9 +142,8 @@ public class Card {
 		return h;
 		
 	}
-	
-	
-public static void PlacerCarte () {
+
+	public static void PlacerCarte () {
 		
 		
 }
