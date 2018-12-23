@@ -31,18 +31,21 @@ public class MainGame {
 		//ArrayList<Card> tableaux2 = Card.tableau2;
 		System.out.println(Card.tableau2.size());
 		
-		
-		
+//		System.out.println(Card.returnCard(22));
+	
 		//Card.tirageCarte(nbjoueur);
-		PremierTour.piocheRoiJoueurs (nbjoueur);
-		ArrayList<Integer> mémoire= Card.mémoire;
-		
-		
-		
-		
+		PremierTour.piocheRoiJoueurs (nbjoueur);		
+//		ArrayList<Integer> memoire= Card.memoire;
 		 // ici on fais une pioche de carte 
 		PremierTour.choixCarte(nbjoueur);
 		
+		ArrayList<Personn> nosJoueurs= Presentation.nosJoueur;
+		for(Personn joueurs: nosJoueurs) {
+		System.out.println(joueurs.getPseudo());	
+		System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
+		System.out.println(joueurs.getOrdreTour()+"\n");	
+		
+		}
 		
 		
 		
