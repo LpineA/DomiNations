@@ -20,9 +20,7 @@ import java.awt.Graphics;
 public class Fenetre extends JFrame implements KeyListener{
    JPanel container = new JPanel();
    public static int largeurFen =200;
-   public static int HauteurFen =200;
-   //Serpent anaconda;
-   
+   public static int HauteurFen =200;   
    
      public Fenetre() {
 	   
@@ -58,7 +56,7 @@ public class Fenetre extends JFrame implements KeyListener{
   @Override 
   public void keyTyped(KeyEvent arg0) {
 	   
-  }
+}
    
    
    

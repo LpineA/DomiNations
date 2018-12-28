@@ -3,7 +3,11 @@ package com.sdz.test;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
+
 public class MainGame {
+	
+	/*
 
 	public static void main(String[] args) {
 		Card.Openfile();
@@ -43,28 +47,18 @@ public class MainGame {
 		
 		ArrayList<Personn> nosJoueurs= Presentation.nosJoueur;
 		for(Personn joueurs: nosJoueurs) {
-<<<<<<< HEAD
 			System.out.println(joueurs.getPseudo());	
 			System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
 			System.out.println(joueurs.getOrdreTour()+"\n");
-		}
-			
 		
-			PremierTour.piocheRoiJoueurs(nbjoueur);
-			Tour.choixCarte(nbjoueur);
-			
-			
-			
-		/*	
 			
 			String currentPlayer = Tour.getTheOrderOfPlaying(1);
 		
 			System.out.println(Personn.findPlayerByPseudo(currentPlayer).getPseudo());
-			System.out.println("@-------Fin de l'affichage de la liste listeJoueurs--------------@");*/
-		/*System.out.println("Ici nous avons finis le premier tour du jeu, nous alons donc continuer, et pour faire ceci nous allons rechoisir des cartes ! ");
-		PremierTour.piocheRoiJoueurs(nbjoueur);*/
-///		
-=======
+			System.out.println("@-------Fin de l'affichage de la liste listeJoueurs--------------@");
+		    System.out.println("Ici nous avons finis le premier tour du jeu, nous alons donc continuer, et pour faire ceci nous allons rechoisir des cartes ! ");
+			PremierTour.piocheRoiJoueurs(nbjoueur);///////////
+		
 		System.out.println(joueurs.getPseudo());	
 		
 		
@@ -80,37 +74,75 @@ public class MainGame {
 			System.out.println(joueurs.getOrdreTour().get(0)+"\n");
 			System.out.println(joueurs.getOrdreTour().get(1)+"\n");
 			
-			}
+			}		
+		}
+	}
 		
->>>>>>> 6479d3844242eeccf94fcd9b6dade92a00fe56b3
 		
+/* ici on a juste un switch case pour recuperer le bon nombre de cartes.
+		
+		
+		
+		
+		
+		
+
+		for (Card V : tableaux) {
+			System.out.println(V.getNomTerrain1());
+		System.out.println(V.getNomTerrain2());
+			System.out.println(V.decrisToi() + "\n");
+		}
+		for (Card N : tableaux2) {
+
+			System.out.println(N.decrisToi() + "\n");
 		}
 		
 		
 		
-		// ici on a juste un switch case pour recuperer le bon nombre de cartes.
-		
-		
-		
-		
-		
-		
-//
-//		for (Card V : tableaux) {
-//			System.out.println(V.getNomTerrain1());
-//			;
-//			System.out.println(V.getNomTerrain2());
-//			System.out.println(V.decrisToi() + "\n");
-//		}
-//		for (Card N : tableaux2) {
-//
-//			System.out.println(N.decrisToi() + "\n");
-//		}
-		
-		
-		
-		// ici on aura notre boucle qui continue jusqua ce qu'on ai poser toutes les cartes :
+		 ici on aura notre boucle qui continue jusqua ce qu'on ai poser toutes les cartes :
 		
 	
+	*/
+	
+	public static void main(String[] args) {
+	
+	Personn Joueur1 = new Personn();
+	
+	
+	System.out.println("test");
+	
+	String Carte1[] = {"Champs", "2"};
+	String Carte2[] = {"Champs", "0"};
+	String Carte3[] = {"Champs", "0"};
+	String Carte4[] = {"Mine", "2"};
+	String Carte5[] = {"Champs", "1"};
+	String Carte6[] = {"Champs", "0"};
+	String Carte7[] = {"Champs", "0"};
+	String Carte8[] = {"Mine", "0"};
+	String Carte9[] = {"Mine", "0"};
+	String Carte10[] = {"Mine","0"};
+	
+	Joueur1.Terrain.put(3, Carte1);
+	Joueur1.Terrain.put(4, Carte2);
+	Joueur1.Terrain.put(13, Carte3);
+	Joueur1.Terrain.put(15, Carte4);
+	Joueur1.Terrain.put(14, Carte5);
+	Joueur1.Terrain.put(9, Carte6);
+	Joueur1.Terrain.put(23, Carte7);
+	Joueur1.Terrain.put(68, Carte8);
+	Joueur1.Terrain.put(67, Carte9);
+	Joueur1.Terrain.put(79, Carte10);
+	
+
+	System.out.println("test2");
+
+	Joueur1.displayTerrain();
+	Joueur1.deleteSimpleElements();
+	Joueur1.displayTerrain();
+	Joueur1.displayTerrain();
+	Joueur1.displayTerrainWithKings();
+	Joueur1.comptedespoints();
+	
+	}
 	}
 
