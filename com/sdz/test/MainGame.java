@@ -9,7 +9,7 @@ public class MainGame {
 		Card.Openfile();
 		ArrayList<Card> tableaux = Card.tableau;
 		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
-
+		
 		
 		Presentation.preparation();
 		int nbjoueur= Presentation.nbJoueurs;
@@ -36,35 +36,30 @@ public class MainGame {
 //		System.out.println(Card.returnCard(22));
 	
 		//Card.tirageCarte(nbjoueur);
-		PremierTour.piocheRoiJoueurs (nbjoueur);		
+		PremierTour.piocheRoiJoueurs (nbjoueur);	
+		System.out.println("apres le 1er tirage il reste donc :");
+		System.out.println(Card.tableau2.size()+"cartes");
 //		ArrayList<Integer> memoire= Card.memoire;
 		 // ici on fais une pioche de carte 
 		PremierTour.choixCarte(nbjoueur);
+		 
+		ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
 		
-		ArrayList<Personn> nosJoueurs= Presentation.nosJoueur;
-		for(Personn joueurs: nosJoueurs) {
-<<<<<<< HEAD
-			System.out.println(joueurs.getPseudo());	
-			System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
-			System.out.println(joueurs.getOrdreTour()+"\n");
-		}
-			
+					
 		
-			PremierTour.piocheRoiJoueurs(nbjoueur);
-			Tour.choixCarte(nbjoueur);
-			
-			
-			
-		/*	
-			
-			String currentPlayer = Tour.getTheOrderOfPlaying(1);
+
 		
-			System.out.println(Personn.findPlayerByPseudo(currentPlayer).getPseudo());
-			System.out.println("@-------Fin de l'affichage de la liste listeJoueurs--------------@");*/
-		/*System.out.println("Ici nous avons finis le premier tour du jeu, nous alons donc continuer, et pour faire ceci nous allons rechoisir des cartes ! ");
-		PremierTour.piocheRoiJoueurs(nbjoueur);*/
-///		
-=======
+		
+		// poser premieres cartes
+		// notre fontion qui pose des cartes 
+		
+		
+		
+		
+			for(Personn joueurs: nosJoueur) {
+
+				
+			
 		System.out.println(joueurs.getPseudo());	
 		
 		
@@ -82,35 +77,137 @@ public class MainGame {
 			
 			}
 		
->>>>>>> 6479d3844242eeccf94fcd9b6dade92a00fe56b3
 		
+	}
+		
+			int i=1;
+			if(nbjoueur==2) {
+				i++;
+			}
+			
+			do {
+				// recuperer nouvelle cartes
+				
+				
+				
+				PremierTour.piocheRoiJoueurs (nbjoueur);	
+				System.out.println("apres le n'eme tirage il reste donc :");
+				System.out.println(Card.tableau2.size()+"cartes");
+				ArrayList <String> ordre= new ArrayList <String>();
+				ordre=ordrejeux(nbjoueur);
+//				for(String o: ordre) {
+//					System.out.println(o);
+//				}
+				for(Personn joueurs: nosJoueur) {	
+					joueurs.reSetOrdreTour();   // pour reset lordre de jeux a chaque tour car sinon ca devient le bordel
+				}
+				PremierTour.tourSuivant(ordre, nbjoueur);
+				//
+				for(Personn joueurs: nosJoueur) {
+
+					
+					
+					System.out.println(joueurs.getPseudo());	
+					
+					
+					if (nbjoueur==3 || nbjoueur==4) {
+					System.out.println(joueurs.getPiocheJoueur().get(i).getNumCards());
+					System.out.println(joueurs.getOrdreTour().get(0)+"\n");
+					
+					}
+					else if (nbjoueur==2) {
+						System.out.println(joueurs.getPiocheJoueur().get(i).getNumCards());
+						System.out.println(joueurs.getPiocheJoueur().get(i+1).getNumCards());
+						Collections.sort(joueurs.getOrdreTour()); 
+						System.out.println(joueurs.getOrdreTour().get(0)+"\n");
+						System.out.println(joueurs.getOrdreTour().get(1)+"\n");
+						
+						}
+					
+					
+				}
+				
+				
+				// ici il faut poser les cartes avant de reset lordre 
+				
+				if (nbjoueur==2) {
+				i++;
+				}
+				
+				
+				i++;
+				
+			} while (Card.tableau2.size()>0);
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+	
+	
+	//ici cet fonction nous sert a faire un arraylist des joueur dans lordre pour le tour a venir....
+	public static ArrayList<String> ordrejeux(int nbJoueurs){
+		System.out.println("hello");
+		if (nbJoueurs==2) {
+		ArrayList <String> ordre = new ArrayList <String>();
+		for(int i=0;i<(nbJoueurs*2);i++) {
+			ordre.add(null);
+		}
+		for(Personn joueur: Presentation.nosJoueur ) {
+			System.out.println(joueur.getPseudo());
+			for (int elem: joueur.getOrdreTour()) {
+			System.out.println(elem);	
+			ordre.set((elem-1), joueur.getPseudo());
+			
+			}
 		}
 		
 		
+		for (String or: ordre) {
+			System.out.println(or);
+		}
 		
-		// ici on a juste un switch case pour recuperer le bon nombre de cartes.
+		return ordre;
+		}
+		else  {
+			ArrayList <String> ordre = new ArrayList <String>();
+			for(int i=0;i<(nbJoueurs);i++) {
+				ordre.add(null);
+			}
+			for(Personn joueur: Presentation.nosJoueur ) {
+				System.out.println(joueur.getPseudo());
+				for (int elem: joueur.getOrdreTour()) {
+				System.out.println(elem);	
+				ordre.set((elem-1), joueur.getPseudo());
+				
+				}
+			}
+			
+			
+			
+			for (String or: ordre) {
+				System.out.println(or);
+			}
+			
+			
+			return ordre;
+			}
 		
 		
-		
-		
-		
-		
-//
-//		for (Card V : tableaux) {
-//			System.out.println(V.getNomTerrain1());
-//			;
-//			System.out.println(V.getNomTerrain2());
-//			System.out.println(V.decrisToi() + "\n");
-//		}
-//		for (Card N : tableaux2) {
-//
-//			System.out.println(N.decrisToi() + "\n");
-//		}
-		
-		
-		
-		// ici on aura notre boucle qui continue jusqua ce qu'on ai poser toutes les cartes :
-		
+	} 
 	
-	}
+	
+	
+	
+	
+	
+	
+}
 

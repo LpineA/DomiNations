@@ -32,7 +32,9 @@ public class Personn {
 //		this.terrainComplet.add(index , nomTer);
 //	}
 
-	
+	public void reSetOrdreTour() {
+		this.ordreTour.removeAll(ordreTour);
+	}
 
 	public ArrayList<Card> getPiocheJoueur() {
 		return piocheJoueur;

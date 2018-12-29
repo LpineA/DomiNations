@@ -134,7 +134,7 @@ public class Card {
 		for (int i = 0; i < piocheJoueur.size(); i++) {
 			if (piocheJoueur.get(i).getNumCards() == number) {
 				h = (piocheJoueur.get(i));
-				System.out.println("Great !!!!");
+				
 			}
 			
 		}

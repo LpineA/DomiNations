@@ -13,6 +13,7 @@ public class PremierTour extends Presentation{
 	static int randomPioche = JeuDeCarte.randomPioche;
 	static int nbTirage = JeuDeCarte.nbTirage;	
 	static ArrayList<String> listeJoueurs = Presentation.listeJoueur;
+	static ArrayList<String> listeJoueurs2 = new ArrayList<String>();
 	static ArrayList<Integer> memoires = Card.memoire;
 	static ArrayList<Card> tableau2 = Card.tableau2;
 	
@@ -85,45 +86,47 @@ public class PremierTour extends Presentation{
 						System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
 					}
 					else {
+						listeJoueurs2.add(listeJoueurs.get(random));
 						listeJoueurs.remove(random);
 						Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
-						System.out.println(choixCarte);
-						System.out.println(Card.returnCard(choixCarte).getNumCards());
+//						System.out.println(choixCarte);
+//						System.out.println(Card.returnCard(choixCarte).getNumCards());
 						player.ajouterCarte(Card.returnCard(choixCarte));
 						 newliste.add(choixCarte);
-						System.out.println((memoires.indexOf(choixCarte)+1));
+//						System.out.println((memoires.indexOf(choixCarte)+1));
 						for(int mem : memoires) {
 							System.out.println(mem);
 						}
-						
+						System.out.println("\n");
 						player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
 //						memoire2.remove(memoire2.indexOf(choixCarte));
-<<<<<<< HEAD
-=======
+
 						
 						
 						
 					}
 					
->>>>>>> 6479d3844242eeccf94fcd9b6dade92a00fe56b3
+
 					
-					}
+					
 			}	
 		}
 		memoires.removeAll(memoires);
 	}
 	
-	public static void choixCarte3Players (ArrayList <String> ordre, int nbJoueurs) {
-		
-		 
-			int  choixCarte = 0;
-			int i = nbJoueurs;
-			while (memoires.size() > 0) {				
+	
+	
+	
+	// ici pour tour suivant on a quasi la meme chose sauf que l'on joue plus au pif on joue en fonction de lordre determiner au premier tour 
+	public static void tourSuivant (ArrayList <String> ordre, int nbJoueurs) {
+		ArrayList<Integer> newliste = new ArrayList <Integer>();
+		int  choixCarte = 0;
+			
+			
+				for (String currentPlayer:ordre) {
 					if(nbJoueurs==3 || nbJoueurs==4 || nbJoueurs ==2) {
-						int random = (int) (Math.random() * (i));
-						i--; 
-						String currentPlayer = listeJoueurs.get(random);
-						listeJoueur.remove(random);
+						
+						
 						System.out.println("Nous allons jouer avec " + currentPlayer);
 						System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
 						try {	
@@ -134,29 +137,38 @@ public class PremierTour extends Presentation{
 							System.out.println("Veuillez entrer un nom de carte valide");
 						}
 						
-						if (memoires.contains(choixCarte) == false){
+						if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
 							System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
 						}
-						
 						else {
-							
-							Personn player= Personn.findPlayerByPseudo(currentPlayer);  //il faut ces ligne pour que ce soit random et pas direct player 1
+//							listeJoueurs2.add(currentPlayer);
+//							listeJoueurs.remove(listeJoueurs.indexOf(currentPlayer));
+							Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
+//							System.out.println(choixCarte);
+//							System.out.println(Card.returnCard(choixCarte).getNumCards());
 							player.ajouterCarte(Card.returnCard(choixCarte));
-							memoires.remove(memoires.indexOf(choixCarte));
+							 newliste.add(choixCarte);
+//							System.out.println((memoires.indexOf(choixCarte)+1));
+							for(int mem : memoires) {
+								System.out.println(mem);
+							}
+							System.out.println("\n");
+							player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
+//							memoire2.remove(memoire2.indexOf(choixCarte));
+
+							
+							
+							
 						}
 						
-						
-						
-					
-				}
-					else {
-						System.out.println("le nombre de joueur est 2");
-					}
 
-					
-					
+						
+						
+				}	
 			}
-	}
+			memoires.removeAll(memoires);  // pour vider la memoire de la pioche ..  chaque tour on la vide et on pioche des nouvelle cartes
+		}
+	
 
 		
 }

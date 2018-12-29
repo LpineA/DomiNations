@@ -13,13 +13,19 @@ public class PremierTour extends Presentation{
 	static int randomPioche = JeuDeCarte.randomPioche;
 	static int nbTirage = JeuDeCarte.nbTirage;	
 	static ArrayList<String> listeJoueurs = Presentation.listeJoueur;
-	static ArrayList<Integer> memoire = Card.memoire;
+	static ArrayList<String> listeJoueurs2 = new ArrayList<String>();
+	static ArrayList<Integer> memoires = Card.memoire;
+	static ArrayList<Card> tableau2 = Card.tableau2;
+	
+//	public ArrayList <String> currentPlayer  = new ArrayList <String>();
+	
 	static ArrayList <Card> piocheJoueur = Card.piocheJoueur;
+	
 	protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
-	 static Personn Joueur1 = Presentation.Joueur1;
-	 static Personn Joueur2 = Presentation.Joueur2;
-	 static Personn Joueur3 = Presentation.Joueur3;
-	 static Personn Joueur4 = Presentation.Joueur4;
+	  Personn Joueur1 = Presentation.Joueur1;
+	  Personn Joueur2 = Presentation.Joueur2;
+	  Personn Joueur3 = Presentation.Joueur3;
+	  Personn Joueur4 = Presentation.Joueur4;
 	
 	
 	static Scanner scan = new Scanner(System.in);
@@ -28,8 +34,6 @@ public class PremierTour extends Presentation{
 
 	
 	public static void piocheRoiJoueurs (int nbplayers) {
-		System.out.println("Nous allons commencer !! \n");
-		
 		System.out.println("...........");
 		
 		switch(nbplayers) {
@@ -47,22 +51,27 @@ public class PremierTour extends Presentation{
 		
 		}
 		System.out.println("Les cartes que vous avez piochées sont : ");
-		
-		 for (int i =0;i< memoire.size();i++){    
-			   System.out.println(memoire.get(i));
+		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  // ordre croissant à mettre en place ! 
+		 for (int i =0;i< memoires.size();i++){    
+			   System.out.println(memoires.get(i));
 				}	
+		  
 	}
 	
 	public static void choixCarte (int nbJoueurs) {
-		 
+		
+		ArrayList<Integer> newliste = new ArrayList <Integer>();
+		
 		int  choixCarte = 0;
 		int i = nbJoueurs;
-		while (memoire.size() > 0) {				
+		while (listeJoueurs.size() > 0) {
+			 
+		
 				if(nbJoueurs==3 || nbJoueurs==4 || nbJoueurs ==2) {
 					int random = (int) (Math.random() * (i));
 					i--; 
 					String currentPlayer = listeJoueurs.get(random);
-					listeJoueur.remove(random);
+					
 					System.out.println("Nous allons jouer avec " + currentPlayer);
 					System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
@@ -73,88 +82,93 @@ public class PremierTour extends Presentation{
 						System.out.println("Veuillez entrer un nom de carte valide");
 					}
 					
-					if (memoire.contains(choixCarte) == false){
+					if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
 						System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
 					}
-					
 					else {
-						
-						Personn player= Personn.findPlayerByPseudo(currentPlayer);  //il faut ces ligne pour que ce soit random et pas direct player 1
+						listeJoueurs2.add(listeJoueurs.get(random));
+						listeJoueurs.remove(random);
+						Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
+//						System.out.println(choixCarte);
+//						System.out.println(Card.returnCard(choixCarte).getNumCards());
 						player.ajouterCarte(Card.returnCard(choixCarte));
-						memoire.remove(memoire.indexOf(choixCarte));
+						 newliste.add(choixCarte);
+//						System.out.println((memoires.indexOf(choixCarte)+1));
+						for(int mem : memoires) {
+							System.out.println(mem);
+						}
+						System.out.println("\n");
+						player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
+//						memoire2.remove(memoire2.indexOf(choixCarte));
+
+						
+						
+						
 					}
 					
-				
-			}
-				else {
-					System.out.println("le nombre de joueur est 2");
-				}
 
-				
-				
+					
+					
+			}	
 		}
+		memoires.removeAll(memoires);
 	}
-
 	
-	public static void choixCarte3Players (ArrayList <Integer> memoire) {
-		
-		int numeroCarte = 0; 
+	
+	
+	
+	// ici pour tour suivant on a quasi la meme chose sauf que l'on joue plus au pif on joue en fonction de lordre determiner au premier tour 
+	public static void tourSuivant (ArrayList <String> ordre, int nbJoueurs) {
+		ArrayList<Integer> newliste = new ArrayList <Integer>();
+		int  choixCarte = 0;
+			
+			
+				for (String currentPlayer:ordre) {
+					if(nbJoueurs==3 || nbJoueurs==4 || nbJoueurs ==2) {
+						
+						
+						System.out.println("Nous allons jouer avec " + currentPlayer);
+						System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
+						try {	
+							choixCarte = scan.nextInt();
+						}
+					
+						catch (Exception e ) {
+							System.out.println("Veuillez entrer un nom de carte valide");
+						}
+						
+						if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
+							System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
+						}
+						else {
+//							listeJoueurs2.add(currentPlayer);
+//							listeJoueurs.remove(listeJoueurs.indexOf(currentPlayer));
+							Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
+//							System.out.println(choixCarte);
+//							System.out.println(Card.returnCard(choixCarte).getNumCards());
+							player.ajouterCarte(Card.returnCard(choixCarte));
+							 newliste.add(choixCarte);
+//							System.out.println((memoires.indexOf(choixCarte)+1));
+							for(int mem : memoires) {
+								System.out.println(mem);
+							}
+							System.out.println("\n");
+							player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
+//							memoire2.remove(memoire2.indexOf(choixCarte));
 
-		
-		try {
-			System.out.println("Quelle est la carte sur laquelle voulez vous poser votre roi ? ");
-			numeroCarte = scan.nextInt();
-		}
-		
-		catch (Exception e ) {
-			System.out.println("Veuillez choisir un num�ro de carte indiqu�e ci-dessus");
-			choixCarte3Players(memoire);
-		}
-		
-		if (memoire.contains(numeroCarte) == false) {
-			System.out.println("Le num�ro de la carte indiqu�e n'est pas pr�sent dans les cartes qui sont sorties ");
-		}
-		
-		else {
-			memoire.remove(memoire.indexOf(numeroCarte));
-			Personn Joueur1 = Presentation.Joueur1;
-			
-			Joueur1.ajouterCarte(Card.returnCard(numeroCarte));
-			}
-			
-			System.out.println("Merci " + pseudoJoueur1 + " au tour de " + pseudoJoueur2 + " ! ");
-			System.out.print("Les cartes disponibles sont ");
-			for (int i = 0 ; i < memoire.size() ; i++) {
-				System.out.print(memoire.get(i) + " , ");
-			}
-			
-			System.out.println(pseudoJoueur2 + " veuilliez choisir une carte ");
-			try {
-				numeroCarte = scan.nextInt();
-			}
-			
-			catch (Exception e) {
-				System.out.println("Veuillez entrez un num�ro de carte valable ");
-			}
-			
-			if (memoire.contains(numeroCarte) == false) {
-				System.out.println("Le numéro de la carte que vous venez de rentrer n'est pas dans la liste");
-				// faire un fonction avec boucle 
-			}
-			
-			else {
-				memoire.remove(memoire.indexOf(numeroCarte));
-				System.out.println("Merci " + pseudoJoueur2 + ", au tour de " + pseudoJoueur3);
-				System.out.println("Malheurseuement il ne reste qu'une carte, "+ pseudoJoueur3 + " votre carte sera donc " + memoire.get(0));
-				System.out.println("Nous allons maintenant à la dispositon des cartes sur vos plateaux respectifs");
-			}
-			
-			
-			
-		}
-	}
+							
+							
+							
+						}
+						
 
-		
+						
+						
+				}	
+			}
+			memoires.removeAll(memoires);  // pour vider la memoire de la pioche ..  chaque tour on la vide et on pioche des nouvelle cartes
+		}
 	
 
-
+		
+}

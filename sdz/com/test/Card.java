@@ -1,5 +1,6 @@
  package sdz.com.test;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -14,6 +15,8 @@ import java.lang.*;
 public class Card {
 	protected static ArrayList<Card> tableau = new ArrayList<Card>();
 	protected static ArrayList<Card> tableau2 = new ArrayList<Card>();
+	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
+	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 	protected int numberOnCard;
 	protected int numberCrowns1;
 	protected int numberCrowns2;
@@ -21,8 +24,9 @@ public class Card {
 	String Terrain2;
 
 	public static ArrayList<Card> Openfile() {
+				
 		Path pathToFile = Paths.get("dominos.csv");
-
+			
 		try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
 			// read the first line from the text file
 			String line = br.readLine();
@@ -40,13 +44,14 @@ public class Card {
 				line = br.readLine();
 			}
 			return tableau;
+			
 		} catch (IOException ioe) {
 			System.out.println("Try again r tard");
 			ioe.printStackTrace();
 		}
-		return tableau;
+		return tableau; 
 	}
-
+	
 	private static Card createCard(String[] metadata) {
 		int crown1 = Integer.parseInt(metadata[0]);
 		String Ter1 = metadata[1];
@@ -61,7 +66,7 @@ public class Card {
 	}
 
 	public Card(int pnumoncard, int pnumbercrown1, int pnumbercrown2, String terrain1, String terrain2) {
-		System.out.println("Création d'une ville avec des paramètres !");
+		System.out.println("CrÃ©ation d'une ville avec des paramÃ¨tres !");
 		Terrain1 = terrain1;
 		System.out.println(Terrain1);
 		Terrain2 = terrain2;
@@ -93,9 +98,9 @@ public class Card {
 
 	public String decrisToi() {
 		return "\t" + this.numberOnCard + " est une carte avec un terraim  de type " + this.Terrain1
-				+ ", elle comporte courone: " + this.numberCrowns1
-				+ " courones(s) => elle est donc de avec un seoncd cote : " + this.Terrain2 + "contenant "
-				+ this.numberCrowns2 + "courones";
+				+ ", elle comporte courrone: " + this.numberCrowns1
+				+ " courrones(s) => elle est donc de avec un seoncd cote : " + this.Terrain2 + "contenant "
+				+ this.numberCrowns2 + "couronnes";
 	}
 
 	public static void suprimerCartes(int number) {
@@ -111,15 +116,12 @@ public class Card {
 		
 	}
 
-	static ArrayList<Integer> mémoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
-	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
-
 	public static void tirageCarte(int nbJoueurs) {
 
 		for (int i = 0; i < nbJoueurs; i++) {
 			int random = (int) (Math.random() * (tableau2.size() - 1));
 			System.out.println((tableau2.get(random)).decrisToi());
-			mémoire.add(tableau2.get(random).getNumCards());
+			memoire.add(tableau2.get(random).getNumCards());
 			piocheJoueur.add(tableau2.get(random));
 			tableau2.remove(random);
 
@@ -130,9 +132,10 @@ public class Card {
 	public static Card returnCard (int number) {
 		
 		Card h = null;
-		for (int i = 0; i < tableau2.size(); i++) {
-			if (tableau2.get(i).getNumCards() == number) {
-				h = (tableau2.get(i));
+		for (int i = 0; i < piocheJoueur.size(); i++) {
+			if (piocheJoueur.get(i).getNumCards() == number) {
+				h = (piocheJoueur.get(i));
+				
 			}
 			
 		}
@@ -140,6 +143,12 @@ public class Card {
 		return h;
 		
 	}
+
+	public static void PlacerCarte () {
+		
+		
+}
+
 }
 
 	
