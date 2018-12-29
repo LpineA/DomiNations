@@ -50,8 +50,8 @@ public class PremierTour extends Presentation{
 		   // You can have any number of case statements.
 		
 		}
-		System.out.println("Les cartes que vous avez piochÃ©es sont : ");
-		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  // ordre croissant Ã  mettre en place ! 
+		System.out.println("Les cartes que vous avez piochées sont : ");
+		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  // ordre croissant à mettre en place ! 
 		 for (int i =0;i< memoires.size();i++){    
 			   System.out.println(memoires.get(i));
 				}	
@@ -73,7 +73,7 @@ public class PremierTour extends Presentation{
 					String currentPlayer = listeJoueurs.get(random);
 					
 					System.out.println("Nous allons jouer avec " + currentPlayer);
-					System.out.println("Quelle est la numÃ©ro de la carte sur laquelle voulez vous poser votre roi ? ");
+					System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
 						choixCarte = scan.nextInt();
 					}
@@ -83,7 +83,7 @@ public class PremierTour extends Presentation{
 					}
 					
 					if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
-						System.out.println("Le numÃ©ro de la carte que vous avez entrÃ©, n'est pas disponible ! Veuillez entrer un numÃ©ro de carte valide");
+						System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
 					}
 					else {
 						listeJoueurs2.add(listeJoueurs.get(random));
@@ -128,7 +128,7 @@ public class PremierTour extends Presentation{
 						
 						
 						System.out.println("Nous allons jouer avec " + currentPlayer);
-						System.out.println("Quelle est la numÃ©ro de la carte sur laquelle voulez vous poser votre roi ? ");
+						System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
 						try {	
 							choixCarte = scan.nextInt();
 						}
@@ -138,7 +138,7 @@ public class PremierTour extends Presentation{
 						}
 						
 						if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
-							System.out.println("Le numÃ©ro de la carte que vous avez entrÃ©, n'est pas disponible ! Veuillez entrer un numÃ©ro de carte valide");
+							System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
 						}
 						else {
 //							listeJoueurs2.add(currentPlayer);

@@ -96,9 +96,9 @@ public class Card {
 	}
 
 	public String decrisToi() {
-		return "\t" + this.numberOnCard + " est une carte avec un terraim  de type " + this.Terrain1
+		return "\t" + this.numberOnCard + " est une carte avec un terrain  de type " + this.Terrain1
 				+ ", elle comporte courrone: " + this.numberCrowns1
-				+ " courrones(s) => elle est donc de avec un seoncd cote : " + this.Terrain2 + "contenant "
+				+ " courrones(s) => elle est donc de avec un second cote : " + this.Terrain2 + "contenant "
 				+ this.numberCrowns2 + "couronnes";
 	}
 

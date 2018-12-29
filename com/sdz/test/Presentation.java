@@ -57,11 +57,7 @@ public class Presentation {
 			
 			
 			
-			Joueur1.setnbreRois(nbJoueurs);
-			Joueur2.setnbreRois(nbJoueurs);
 			
-			Joueur1.setnbreRois(nbJoueurs);
-			Joueur2.setnbreRois(nbJoueurs);
 			
 			Joueur1.settotalNumberPlayers(nbJoueurs);
 			Joueur2.settotalNumberPlayers(nbJoueurs);
@@ -99,9 +95,7 @@ public class Presentation {
 			
 			
 			
-			Joueur1.setnbreRois(1);
-			Joueur2.setnbreRois(1);
-			Joueur3.setnbreRois(1);
+			
 			
 			Joueur1.settotalNumberPlayers(nbJoueurs);
 			Joueur2.settotalNumberPlayers(nbJoueurs);
@@ -143,10 +137,7 @@ public class Presentation {
 			pseudoJoueur4 = scane.nextLine();
 			Joueur4.setPseudo(pseudoJoueur4);
 			
-			Joueur1.setnbreRois(1);
-			Joueur2.setnbreRois(1);
-			Joueur3.setnbreRois(1);
-			Joueur4.setnbreRois(1);
+			
 			
 			Joueur1.settotalNumberPlayers(nbJoueurs);
 			Joueur2.settotalNumberPlayers(nbJoueurs);
