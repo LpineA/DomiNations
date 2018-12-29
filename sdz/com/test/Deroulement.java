@@ -10,6 +10,7 @@ public class Deroulement {
 		JeuDeCarte.creationCarte();
 		JeuDeCarte.creationJeu(jeu);
 		PremierTour.piocheRoi2Joueur();
+		
 
 
 	}

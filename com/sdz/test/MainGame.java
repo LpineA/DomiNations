@@ -144,9 +144,17 @@ public class MainGame {
 //			
 			
 			
+		
 			
 			
-			Personn Joueur1 = Presentation.Joueur1;
+			
+			
+			
+			
+			
+			
+			
+			Personn Joueur1 = new Personn();
 			
 			
 			System.out.println("test");
@@ -161,6 +169,19 @@ public class MainGame {
 			String Carte8[] = {"Mine", "0"};
 			String Carte9[] = {"Mine", "0"};
 			String Carte10[] = {"Mine","0"};
+			String Carte11[] = {"Champs", "0"};
+			String Carte12[] = {"Champs", "0"};
+			String Carte13[] = {"Foret", "1"};
+			String Carte14[] = {"Foret", "2"};
+			String Carte15[] = {"Foret", "1"};
+			String Carte16[] = {"Foret", "0"};
+			String Carte17[] = {"Mer", "1"};
+			String Carte18[] = {"Mer", "1"};
+			String Carte19[] = {"Mer", "1"};
+			String Carte20[] = {"Prairie", "0"};
+			String Carte21[] = {"Prairie", "0"};
+
+			
 			
 			Joueur1.Terrain.put(3, Carte1);
 			Joueur1.Terrain.put(4, Carte2);
@@ -172,16 +193,36 @@ public class MainGame {
 			Joueur1.Terrain.put(68, Carte8);
 			Joueur1.Terrain.put(67, Carte9);
 			Joueur1.Terrain.put(79, Carte10);
-			
+			Joueur1.Terrain.put(12, Carte11);
+			Joueur1.Terrain.put(37, Carte13);
+			Joueur1.Terrain.put(38, Carte14);
+			Joueur1.Terrain.put(39, Carte16);
+			Joueur1.Terrain.put(47, Carte15);
+			Joueur1.Terrain.put(59, Carte17);
+			Joueur1.Terrain.put(60, Carte18);
+			Joueur1.Terrain.put(61, Carte19);
+			Joueur1.Terrain.put(25, Carte20);
+			Joueur1.Terrain.put(34, Carte21);
 
 			System.out.println("test2");
+			
+			Joueur1.displayTerrain();
 
-			Joueur1.displayTerrain();
-			Joueur1.deleteSimpleElements();
-			Joueur1.displayTerrain();
-			Joueur1.displayTerrain();
+			for (int j = 0; j<81 ; j++) {
+				Joueur1.counter(j);
+			}
+			
 			Joueur1.displayTerrainWithKings();
-			Joueur1.comptedespoints();
+			System.out.println(Joueur1.counter);
+			Joueur1.displayTerrain();
+			System.out.println(Joueur1.Terrain.get(3)[1]);
+			System.out.println(Joueur1.nbOfKing);
+			
+			
+			
+			
+			
+			
 			
 			
 		
@@ -248,4 +289,3 @@ public class MainGame {
 	} 
 		
 }
-	

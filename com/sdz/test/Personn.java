@@ -179,7 +179,7 @@ public class Personn {
 			
 			typeDominoFace1 = Card.getNomTerrain1();
 			typeDominoFace2 = Card.getNomTerrain2();
-			nbOFKingDominoFace1 = String.valueOf(Card.getNumC1());
+			nbOFKingDominoFace1 = String.valueOf(Card.getNumC1()); 
 			nbOfKingDominoFace2 = String.valueOf(Card.getNumC2());
 			
 			
@@ -320,15 +320,16 @@ public class Personn {
 			boolean condition;
 			
 			try {
-				condition = Terrain.get(i)[0] == Terrain.get(i-1)[0] || Terrain.get(i)[0] == Terrain.get(i+1)[0] || Terrain.get(i)[0] == Terrain.get(i+9)[0] || Terrain.get(i)[0] == Terrain.get(i-9)[0];
+				condition = ((Terrain.get(i))[0] == Terrain.get(i-1)[0] || Terrain.get(i)[0] == Terrain.get(i+1)[0] || Terrain.get(i)[0] == Terrain.get(i+9)[0]||Terrain.get(i)[0] == Terrain.get(i-9)[0]);
 			}
 			
 			catch(NullPointerException e ) {
-				return false;
+				return false;		
 			}
 			
 			return condition;
 		}
+
 		
 		
 		
@@ -353,27 +354,91 @@ public class Personn {
 				else if(affirmation(i) == true && affirmation(i+1) == false ) {
 					result = 1;
 					return result;
+					
+					
+					
+					
+
+		int counter;
+		int nbOfKing;
+		public Integer counter(int i ) {			
+				try {
+					
+					
+					
+					if ((Terrain.get(i)[0] == Terrain.get(i+1)[0] || (Terrain.get(i)[0] == Terrain.get(i+9)[0]) )== true) {
+						 if (Terrain.get(i)[0] == Terrain.get(i+1)[0] == true) {
+							counter++;
+							nbOfKing =+ Integer.parseInt(Terrain.get(i)[1]);
+							counter(i+1);
+						 }
+						 
+						 
+						 /*if ( (Terrain.get(i)[0] == Terrain.get(i-1)[0] ) && (Terrain.get(i)[0] != Terrain.get(i+1)[0]) && (Terrain.get(i)[0] != Terrain.get(i+9)[0]) ) {
+							 nbOfKing =+ Integer.parseInt(Terrain.get(i)[1]);
+								counter++;
+							}*/
+						 
+						 /*if ((Terrain.get(i)[0] == Terrain.get(i+9)[0] ) && (Terrain.get(i)[0] != Terrain.get(i+1)[0]) && (Terrain.get(i)[0] != Terrain.get(i+10)[0])) {
+							 counter++;
+						 }
+						 
+						 if( (Terrain.get(i)[0] == Terrain.get(i+1)[0]) && (Terrain.get(i)[0] == Terrain.get(i+9)[0]) && Terrain.get(i)[0] != Terrain.get(i+10)[0]) {
+							 counter++;
+						 }*/
+						
+						if (Terrain.get(i)[0] == Terrain.get(i+9)[0] == true ){
+							counter++;
+							nbOfKing =+ Integer.parseInt(Terrain.get(i)[1]);
+							counter (i+9);
+						}
+						
+					}
+					
+					else {
+						nbOfKing = 0;
+					}
+					
+				return counter;
+
 				}
 				
-				else if (affirmation(i) == true) {
-					result =  Integer.parseInt(Terrain.get(i)[1]);
-					return result;
-				}			
-				
-				else {
-					result = 0;
-					return result;
+				catch (NullPointerException e ) {
+					return 0;
+				}
+		}
+		
+
+	
+		/*List<Square> theZone = new ArrayList<Square>();
+		
+		public void scoreAZone(int x, int y) {
+
+			findAZone(x, y);
+			int numCrowns = 0;
+			for (int i = 0; i < theZone.size(); i++) {
+				numCrowns += theZone.get(i).getCrowns();
+			}
+			totalBoardScore += (theZone.size() * numCrowns);
+			theZone = new ArrayList<Square>();
+			// System.out.print(" " + numCrowns + " ");
+			// System.out.print(theZone.size());
+
+			// System.out.print("Scored");
+
+		}
+
+		public void scoreTheBoard() {
+
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					scoreAZone(j, i);
 				}
 			}
-			
-			return result;
-			
-		}
-		catch (NullPointerException e){
-			return 0;
-		}
-	
-	}
+
+			System.out.print(totalBoardScore);
+		}*/
+		
 		
 		
 		
@@ -420,12 +485,10 @@ public class Personn {
 		
 		
 		public void comptedespoints() {
-			
-		int pointChamps = 0;
-				
+							
 		int count = 0; 
 			for (int i = 1 ; i<81 ; i++) {
-					count = count + result(i);
+					//count = count + result(i);
 				}
 		
 				
