@@ -19,8 +19,8 @@ import java.awt.Graphics;
 
 public class Fenetre extends JFrame implements KeyListener{
    JPanel container = new JPanel();
-   public static int largeurFen =200;
-   public static int HauteurFen =200;   
+   public static int largeurFen =1500;
+   public static int HauteurFen =900;   
    
      public Fenetre() {
 	   

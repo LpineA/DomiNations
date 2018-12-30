@@ -2,12 +2,16 @@ package com.sdz.test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.JFrame;
 
+//import snake.Fenetre;
 
 
 public class MainGame {
 	
 	public static void main(String[] args) {
+		Fenetre fen1 = new Fenetre();
+		
 		Card.Openfile();
 		ArrayList<Card> tableaux = Card.tableau;
 		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
