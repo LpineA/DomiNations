@@ -176,13 +176,13 @@ public class Personn {
 			
 	//-----------------------Initilisation des variables de la carte------------------------//
 			
-			
+			System.out.println("debug 1");
 			typeDominoFace1 = Card.getNomTerrain1();
 			typeDominoFace2 = Card.getNomTerrain2();
 			nbOFKingDominoFace1 = String.valueOf(Card.getNumC1()); 
 			nbOfKingDominoFace2 = String.valueOf(Card.getNumC2());
 			
-			
+			System.out.println("debug 2");
 	//----------------------Fin de l'initialisaton des variables de la carte------------------//
 			
 			int caseFace1 = 0;
@@ -340,23 +340,6 @@ public class Personn {
 		
 		
 		
-		public Integer result (int i ) {
-			
-		int result = 0; 
-			
-		try{		
-			if (Terrain.get(i)[0] != null) {			
-				if ( affirmation(i) == true && affirmation (i-1) == false && affirmation(i+1) == true ){
-					result = 2;
-					return result;
-				}
-				
-				else if(affirmation(i) == true && affirmation(i+1) == false ) {
-					result = 1;
-					return result;
-					
-					
-					
 					
 
 		int counter;
