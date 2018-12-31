@@ -1,12 +1,13 @@
 package com.sdz.test;
 import java.util.*;
+import javax.swing.*;
 
 public class Personn {
 	String pseudo;
 		int nbreRois;
 		ArrayList<Integer> ordreTour= new ArrayList<Integer>();///  on rajoute ce caracteristique car il nous permet de savoir quelle joueur pose en premier
 		Hashtable<Integer, String[]> Terrain = new Hashtable< Integer, String[] >();
-	
+		JPanel panelJoueur = new JPanel();
 		//diplayTerrain[n][1] : retourne le type de terrain sur la case n 
 		//displayTerrain[n][2] : retourne le nombre de rois de la case n 
 		
@@ -19,6 +20,19 @@ public class Personn {
 		Scanner scan = new Scanner(System.in);
 
 
+
+		
+		
+		
+		
+	
+	public JPanel getPanelJoueur() {
+			return panelJoueur;
+		}
+
+		public void setPanelJoueur(JPanel panelJoueur) {
+			this.panelJoueur = panelJoueur;
+		}
 
 	public void reSetOrdreTour() {
 		this.ordreTour.removeAll(ordreTour);

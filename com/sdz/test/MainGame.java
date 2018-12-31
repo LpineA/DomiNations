@@ -3,14 +3,15 @@ package com.sdz.test;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
 
-//import snake.Fenetre;
 
 
-public class MainGame {
+public class MainGame extends JPanel {
 	
 	public static void main(String[] args) {
-		Fenetre fen1 = new Fenetre();
+		
 		
 		Card.Openfile();
 		ArrayList<Card> tableaux = Card.tableau;
@@ -66,7 +67,7 @@ public class MainGame {
 			for(String currentPlayer: ordre) {
 
 		Personn joueurs= Personn.findPlayerByPseudo(currentPlayer);	
-			
+		
 		System.out.println(joueurs.getPseudo());	
 		
 		

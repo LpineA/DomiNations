@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.Graphics;
-
+import javax.swing.JButton;
 
 
 
@@ -33,7 +33,9 @@ public class Fenetre extends JFrame implements KeyListener{
 	   
   
 	   container.setBackground(Color.DARK_GRAY);
-	   
+	   //On lui donne un nombre de colonnes à afficher
+
+		
 	   this.addKeyListener(this);
 	   this.setVisible(true);
 	   this.setContentPane(container);
@@ -43,6 +45,15 @@ public class Fenetre extends JFrame implements KeyListener{
    public void StartGame() {
 	 //  anaconda.jouer();
    }
+   
+   
+   
+	   
+		//...
+	 
+	
+   
+   
   @Override 
    public void keyPressed(KeyEvent arg0) {
 	   

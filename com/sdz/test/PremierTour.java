@@ -17,6 +17,7 @@ public class PremierTour extends Presentation{
 //	public ArrayList <String> currentPlayer  = new ArrayList <String>();
 	
 	static ArrayList <Card> piocheJoueur = Card.piocheJoueur;
+	static Fenetre fen =new Fenetre();
 	
 	protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
 	  Personn Joueur1 = Presentation.Joueur1;

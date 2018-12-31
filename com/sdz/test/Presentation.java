@@ -1,5 +1,18 @@
 package com.sdz.test;
 import java.util.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.*;
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.Graphics;
+import java.awt.GridLayout;
 
 public class Presentation {
 	
@@ -14,13 +27,18 @@ public class Presentation {
 	static Personn Joueur4; 
 	public static ArrayList< String> listeJoueur = new ArrayList<String> ();
 	protected static ArrayList<Personn> nosJoueur = new ArrayList<Personn>();
-	
+   
+	static Fenetre fen =PremierTour.fen;
 
 
 	
 	public static void preparation () {
+		JPanel panelInitialisation = new JPanel();
+		 JTextField textField = new JTextField();
+			textField.setColumns(10);
+		panelInitialisation.add(textField);
 		Scanner scan = new Scanner(System.in);
-		
+		fen.setContentPane(panelInitialisation);
 		System.out.println("#----------------------------------------------#" + "\n" );
 		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
 		System.out.println("#----------------------------------------------#" + "\n" );
