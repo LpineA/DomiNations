@@ -8,7 +8,7 @@ import java.util.Collections;
 public class MainGame {
 	
 	public static void main(String[] args) {
-		Card.Openfile();
+		/*Card.Openfile();
 		ArrayList<Card> tableaux = Card.tableau;
 		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
 		
@@ -142,17 +142,7 @@ public class MainGame {
 //			} while (Card.tableau2.size()>0);
 //			
 //			
-			
-			
-		
-			
-			
-			
-			
-			
-			
-			
-			
+			*/	
 			
 			Personn Joueur1 = new Personn();
 			
@@ -215,7 +205,7 @@ public class MainGame {
 			Joueur1.displayTerrainWithKings();
 			System.out.println(Joueur1.counter);
 			Joueur1.displayTerrain();
-			System.out.println(Joueur1.Terrain.get(3)[1]);
+			//System.out.println(Joueur1.Terrain.get(3)[1]);
 			System.out.println(Joueur1.nbOfKing);
 			
 			
