@@ -408,7 +408,6 @@ public class Personn {
 			
 			return condition;
 		}
-<<<<<<< HEAD
 			
 		/*public Integer result (int i ) {
 			
@@ -435,7 +434,6 @@ public class Personn {
 			
 		}
 		}*/
-=======
 
 		
 		
@@ -449,7 +447,6 @@ public class Personn {
 		
 					
 
->>>>>>> 8cae5ebb9df885ee1482eda77f4263cbecc0cb37
 		int counter;
 		int nbOfKing;
 		public Integer counter(int i ) {			
