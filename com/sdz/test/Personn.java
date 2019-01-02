@@ -1,12 +1,13 @@
 package com.sdz.test;
 import java.util.*;
+import javax.swing.*;
 
 public class Personn {
 	String pseudo;
 		int nbreRois;
 		ArrayList<Integer> ordreTour= new ArrayList<Integer>();///  on rajoute ce caracteristique car il nous permet de savoir quelle joueur pose en premier
 		Hashtable<Integer, String[]> Terrain = new Hashtable< Integer, String[] >();
-	
+		JPanel panelJoueur = new JPanel();
 		//diplayTerrain[n][1] : retourne le type de terrain sur la case n 
 		//displayTerrain[n][2] : retourne le nombre de rois de la case n 
 		
@@ -19,6 +20,19 @@ public class Personn {
 		Scanner scan = new Scanner(System.in);
 
 
+
+		
+		
+		
+		
+	
+	public JPanel getPanelJoueur() {
+			return panelJoueur;
+		}
+
+		public void setPanelJoueur(JPanel panelJoueur) {
+			this.panelJoueur = panelJoueur;
+		}
 
 	public void reSetOrdreTour() {
 		this.ordreTour.removeAll(ordreTour);
@@ -138,13 +152,13 @@ public class Personn {
 			
 	//-----------------------Initilisation des variables de la carte------------------------//
 			
-			
+			System.out.println("debug 1");
 			typeDominoFace1 = Card.getNomTerrain1();
 			typeDominoFace2 = Card.getNomTerrain2();
 			nbOFKingDominoFace1 = String.valueOf(Card.getNumC1()); 
 			nbOfKingDominoFace2 = String.valueOf(Card.getNumC2());
 			
-			
+			System.out.println("debug 2");
 	//----------------------Fin de l'initialisaton des variables de la carte------------------//
 			
 			int caseFace1 = 0;
@@ -394,6 +408,7 @@ public class Personn {
 			
 			return condition;
 		}
+<<<<<<< HEAD
 			
 		/*public Integer result (int i ) {
 			
@@ -420,6 +435,21 @@ public class Personn {
 			
 		}
 		}*/
+=======
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+					
+
+>>>>>>> 8cae5ebb9df885ee1482eda77f4263cbecc0cb37
 		int counter;
 		int nbOfKing;
 		public Integer counter(int i ) {			

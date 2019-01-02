@@ -1,5 +1,6 @@
  package com.sdz.test;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -21,6 +22,9 @@ public class Card {
 	protected int numberCrowns2;
 	String Terrain1;
 	String Terrain2;
+	public int posX, posY;
+	  Color couleur;
+	
 
 	public static ArrayList<Card> Openfile() {
 				
@@ -142,9 +146,11 @@ public class Card {
 		return h;
 		
 	}
-
-	public static void PlacerCarte () {
-		
+	
+	public void dessinerCarte (int x, int y , Color couleur) {
+		this.posX=x;
+		this.posY=y;
+		this.couleur=couleur;
 		
 }
 

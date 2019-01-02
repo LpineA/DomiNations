@@ -9,9 +9,12 @@ public class PremierTour extends Presentation{
 	static String pseudoJoueur2 = Presentation.pseudoJoueur2;
 	static String pseudoJoueur3 = Presentation.pseudoJoueur3;
 	static String pseudoJoueur4 = Presentation.pseudoJoueur4;
+<<<<<<< HEAD
 	//static HashMap<Integer, String> jeu = JeuDeCarte.jeu;
 	//static int randomPioche = JeuDeCarte.randomPioche;
 	//static int nbTirage = JeuDeCarte.nbTirage;	
+=======
+>>>>>>> 8cae5ebb9df885ee1482eda77f4263cbecc0cb37
 	static ArrayList<String> listeJoueurs = Presentation.listeJoueur;
 	static ArrayList<String> listeJoueurs2 = new ArrayList<String>();
 	static ArrayList<Integer> memoires = Card.memoire;
@@ -20,6 +23,7 @@ public class PremierTour extends Presentation{
 //	public ArrayList <String> currentPlayer  = new ArrayList <String>();
 	
 	static ArrayList <Card> piocheJoueur = Card.piocheJoueur;
+	static Fenetre fen =new Fenetre();
 	
 	protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
 	  Personn Joueur1 = Presentation.Joueur1;
@@ -100,7 +104,7 @@ public class PremierTour extends Presentation{
 						System.out.println("\n");
 						player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
 //						memoire2.remove(memoire2.indexOf(choixCarte));
-
+						
 						
 						
 						
@@ -155,7 +159,6 @@ public class PremierTour extends Presentation{
 							System.out.println("\n");
 							player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
 //							memoire2.remove(memoire2.indexOf(choixCarte));
-
 							
 							
 							
