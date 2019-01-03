@@ -3,7 +3,7 @@ import java.util.*;
 import javax.swing.*;
 
 public class Personn {
-	String pseudo;
+		String pseudo;
 		int nbreRois;
 		ArrayList<Integer> ordreTour= new ArrayList<Integer>();///  on rajoute ce caracteristique car il nous permet de savoir quelle joueur pose en premier
 		Hashtable<Integer, String[]> Terrain = new Hashtable< Integer, String[] >();

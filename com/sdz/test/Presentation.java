@@ -15,7 +15,8 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 
 public class Presentation {
-	
+	static String contenu;
+	static boolean continu= true;
 	static int nbJoueurs;
 	static String pseudoJoueur1;
 	static String pseudoJoueur2;
@@ -33,31 +34,78 @@ public class Presentation {
 
 	
 	public static void preparation () {
+		
+//		GridLayout gl = new GridLayout();
+//		gl.setColumns(2);
+//		gl.setRows(3);
+//		fen.setLayout(gl);
+		
+//		fen.getContentPane().add(new JButton("1"));
+//	    fen.getContentPane().add(new JButton("2"));
+//	    fen.getContentPane().add(new JButton("3"));
+//	    fen.getContentPane().add(new JButton("4"));
+//	    fen.getContentPane().add(new JButton("5"));
+
 		JPanel panelInitialisation = new JPanel();
-		 JTextField textField = new JTextField();
-			textField.setColumns(10);
-		panelInitialisation.add(textField);
+		 
+		
+		
+		JLabel l = new JLabel("Bienvenue dans le jeu de DomiNations" + "\n");
+		panelInitialisation.add(l);
+	
+	JLabel m = new JLabel("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
+	panelInitialisation.add(m);
+	
+	JTextField textField = new JTextField();
+	textField.setColumns(10);
+panelInitialisation.add(textField);
+
+JButton but= new JButton();
+panelInitialisation.add(but);
+	
+		 
+		fen.getContentPane(panelInitialisation);
+	    fen.setVisible(true);
+		
+		
+		
 		Scanner scan = new Scanner(System.in);
-		fen.setContentPane(panelInitialisation);
-		System.out.println("#----------------------------------------------#" + "\n" );
-		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
-		System.out.println("#----------------------------------------------#" + "\n" );
-		System.out.println("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
+		
+//		System.out.println("#----------------------------------------------#" + "\n" );
+//		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
+//		System.out.println("#----------------------------------------------#" + "\n" );
+//		System.out.println("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
+		
+		
+		while(continu) {
+		but.addActionListener(new ActionListener(){  
+			public void actionPerformed(ActionEvent e){  
+			  contenu = textField.getText();
+			  
+			     
+		
 		try {
-		nbJoueurs = scan.nextInt();
+			nbJoueurs = Integer.parseInt(contenu);
+		
 		}
-		catch (Exception e ) {
-			System.out.println("Veuillez entrer un nombre valide joueur ");
+		catch (NumberFormatException ex ) {
+			JLabel erreur = new JLabel("Veuillez entrer un nombre valide joueur ");
+			panelInitialisation.add(erreur);
+			fen.setVisible(true);
 			preparation();
 		}
 		
 		if (nbJoueurs <= 0) {
-			System.out.println("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
+			JLabel erreur = new JLabel("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
+			panelInitialisation.add(erreur);
+			fen.setVisible(true);
 			preparation();
 		}
 		
 		if (nbJoueurs > 4) {
-			System.out.println("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
+			JLabel erreur = new JLabel("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
+			panelInitialisation.add(erreur);
+			fen.setVisible(true);
 			preparation();
 		}
 		
@@ -176,7 +224,11 @@ public class Presentation {
 			
 			
 		}
-		
+		continu=false;
+			   }  
+			
+	    }); 
+	}
 
 	}
 
