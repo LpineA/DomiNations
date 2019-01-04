@@ -28,17 +28,25 @@ public class Presentation {
 	public static ArrayList< String> listeJoueur = new ArrayList<String> ();
 	protected static ArrayList<Personn> nosJoueur = new ArrayList<Personn>();
    
-	static Fenetre fen =PremierTour.fen;
+	static Fenetre fen = PremierTour.fen;
 
 
 	
 	public static void preparation () {
+		//--------------------------------------Variables Graphiques---------------------------------------------//
+		
 		JPanel panelInitialisation = new JPanel();
-		 JTextField textField = new JTextField();
-			textField.setColumns(10);
+		JTextField textField = new JTextField();
+		textField.setColumns(10);
 		panelInitialisation.add(textField);
+		
 		Scanner scan = new Scanner(System.in);
+		
 		fen.setContentPane(panelInitialisation);
+		fen.setVisible(true);
+		
+		//--------------------------------------------------------------------------------------------------------//
+
 		System.out.println("#----------------------------------------------#" + "\n" );
 		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
 		System.out.println("#----------------------------------------------#" + "\n" );
