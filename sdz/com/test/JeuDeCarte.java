@@ -64,11 +64,11 @@ public class JeuDeCarte {
         }
     }
 
-    public static ArrayList<String> jeuJoueur(HashMap<Integer, String> jeu, int nbdeCarte�Tirer) {
+    public static ArrayList<String> jeuJoueur(HashMap<Integer, String> jeu, int nbdeCarteàTirer) {
 
         ArrayList<String> main = new ArrayList<String>();
 
-        for (int i = 0; i < nbdeCarte�Tirer; i++) {
+        for (int i = 0; i < nbdeCarteàTirer; i++) {
             main.add(tirage(jeu, randomPioche, nbTirage));
         }
         afficherMain(jeu, main);

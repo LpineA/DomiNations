@@ -9,6 +9,9 @@ public class PremierTour extends Presentation{
 	static String pseudoJoueur2 = Presentation.pseudoJoueur2;
 	static String pseudoJoueur3 = Presentation.pseudoJoueur3;
 	static String pseudoJoueur4 = Presentation.pseudoJoueur4;
+	//static HashMap<Integer, String> jeu = JeuDeCarte.jeu;
+	//static int randomPioche = JeuDeCarte.randomPioche;
+	//static int nbTirage = JeuDeCarte.nbTirage;	
 	static ArrayList<String> listeJoueurs = Presentation.listeJoueur;
 	static ArrayList<String> listeJoueurs2 = new ArrayList<String>();
 	static ArrayList<Integer> memoires = Card.memoire;
@@ -48,8 +51,8 @@ public class PremierTour extends Presentation{
 		   // You can have any number of case statements.
 		
 		}
-		System.out.println("Les cartes que vous avez piochées sont : ");
-		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  // ordre croissant à mettre en place ! 
+		System.out.println("Les cartes que vous avez piochï¿½es sont : ");
+		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  // ordre croissant ï¿½ mettre en place ! 
 		 for (int i =0;i< memoires.size();i++){    
 			   System.out.println(memoires.get(i));
 				}	
@@ -71,7 +74,7 @@ public class PremierTour extends Presentation{
 					String currentPlayer = listeJoueurs.get(random);
 					
 					System.out.println("Nous allons jouer avec " + currentPlayer);
-					System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
+					System.out.println("Quelle est la numï¿½ro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
 						choixCarte = scan.nextInt();
 					}
@@ -81,7 +84,7 @@ public class PremierTour extends Presentation{
 					}
 					
 					if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
-						System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
+						System.out.println("Le numï¿½ro de la carte que vous avez entrï¿½, n'est pas disponible ! Veuillez entrer un numï¿½ro de carte valide");
 					}
 					else {
 						listeJoueurs2.add(listeJoueurs.get(random));
@@ -126,7 +129,7 @@ public class PremierTour extends Presentation{
 						
 						
 						System.out.println("Nous allons jouer avec " + currentPlayer);
-						System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
+						System.out.println("Quelle est la numï¿½ro de la carte sur laquelle voulez vous poser votre roi ? ");
 						try {	
 							choixCarte = scan.nextInt();
 						}
@@ -136,7 +139,7 @@ public class PremierTour extends Presentation{
 						}
 						
 						if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
-							System.out.println("Le numéro de la carte que vous avez entré, n'est pas disponible ! Veuillez entrer un numéro de carte valide");
+							System.out.println("Le numï¿½ro de la carte que vous avez entrï¿½, n'est pas disponible ! Veuillez entrer un numï¿½ro de carte valide");
 						}
 						else {
 //							listeJoueurs2.add(currentPlayer);
