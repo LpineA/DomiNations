@@ -9,8 +9,12 @@ import javax.swing.JButton;
 
 
 public class MainGame extends JPanel {
+	
+	protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
+
 
 	public static void main(String[] args) {
+		
 		/*Card.Openfile();
 		ArrayList<Card> tableaux = Card.tableau;
 		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
@@ -62,7 +66,7 @@ public class MainGame extends JPanel {
 		ArrayList <String> ordre= new ArrayList <String>();
 		ordre=ordrejeux(nbjoueur);
 
-			for(String currentPlayer: ordre) {
+		for(String currentPlayer: ordre) {
 
 		Personn joueurs= Personn.findPlayerByPseudo(currentPlayer);
 
@@ -173,7 +177,8 @@ public class MainGame extends JPanel {
 //			Joueur1.Terrain.put(61, Carte19);
 //			Joueur1.Terrain.put(25, Carte20);
 //			Joueur1.Terrain.put(34, Carte21);
-			for(Personn player: nosJoueur) {
+			
+		for(Personn player: nosJoueur) {
 			System.out.println("test2");
 
 			player.displayTerrain();
@@ -209,7 +214,7 @@ public class MainGame extends JPanel {
 
 
 
-	//ici cet fonction nous sert a faire un arraylist des joueur dans lordre pour le tour a venir....
+	//ici cette fonction nous sert a faire un ArrayList des joueurs dans l'ordre pour le tour à venir....
 	public static ArrayList<String> ordrejeux(int nbJoueurs){
 		System.out.println("hello");
 		if (nbJoueurs==2) {

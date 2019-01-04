@@ -434,18 +434,7 @@ public class Personn {
 			
 		}
 		}*/
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-					
+				
 
 		int counter;
 		int nbOfKing;
