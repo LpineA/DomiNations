@@ -64,7 +64,7 @@ JButton but= new JButton();
 panelInitialisation.add(but);
 	
 		 
-		fen.getContentPane(panelInitialisation);
+		fen.setContentPane(panelInitialisation);
 	    fen.setVisible(true);
 		
 		
