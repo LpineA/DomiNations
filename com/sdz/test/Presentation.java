@@ -36,37 +36,29 @@ public class Presentation {
 	public static void preparation () {
 
 		
-//		GridLayout gl = new GridLayout();
-//		gl.setColumns(2);
-//		gl.setRows(3);
-//		fen.setLayout(gl);
-		
-//		fen.getContentPane().add(new JButton("1"));
-//	    fen.getContentPane().add(new JButton("2"));
-//	    fen.getContentPane().add(new JButton("3"));
-//	    fen.getContentPane().add(new JButton("4"));
-//	    fen.getContentPane().add(new JButton("5"));
 
-		JPanel panelInitialisation = new JPanel();
-		 
-		
-		
-		JLabel l = new JLabel("Bienvenue dans le jeu de DomiNations" + "\n");
-		panelInitialisation.add(l);
-	
-	JLabel m = new JLabel("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
-	panelInitialisation.add(m);
-	
-	JTextField textField = new JTextField();
-	textField.setColumns(10);
-panelInitialisation.add(textField);
 
-JButton but= new JButton();
-panelInitialisation.add(but);
-	
-		 
-		fen.setContentPane(panelInitialisation);
-	    fen.setVisible(true);
+//		JPanel panelInitialisation = new JPanel();
+//		 
+//		
+//		
+//		JLabel l = new JLabel("Bienvenue dans le jeu de DomiNations" + "\n");
+//		panelInitialisation.add(l);
+//	
+//		JLabel m = new JLabel(
+//				"Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
+//		panelInitialisation.add(m);
+//
+//		JTextField textField = new JTextField();
+//		textField.setColumns(10);
+//		panelInitialisation.add(textField);
+//
+//		JButton but = new JButton();
+//		panelInitialisation.add(but);
+//	
+//		 
+//		fen.setContentPane(panelInitialisation);
+//	    fen.setVisible(true);
 		
 		
 		
@@ -79,54 +71,36 @@ panelInitialisation.add(but);
 		
 		
 		while(continu) {
-		but.addActionListener(new ActionListener(){  
-			public void actionPerformed(ActionEvent e){  
-			  contenu = textField.getText();
+//		but.addActionListener(new ActionListener(){  
+//			public void actionPerformed(ActionEvent e){  
+//			  contenu = textField.getText();
 			  
 			     
 		
 
-		//--------------------------------------Variables Graphiques---------------------------------------------//
-		
-		JPanel panelInitialisation = new JPanel();
-		JTextField textField = new JTextField();
-		textField.setColumns(10);
-		panelInitialisation.add(textField);
-		
-		Scanner scan = new Scanner(System.in);
-		
-		fen.setContentPane(panelInitialisation);
-		fen.setVisible(true);
-		
-		//--------------------------------------------------------------------------------------------------------//
-
-		System.out.println("#----------------------------------------------#" + "\n" );
-		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
-		System.out.println("#----------------------------------------------#" + "\n" );
-		System.out.println("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
-
+	
 		try {
 			nbJoueurs = Integer.parseInt(contenu);
 		
 		}
 		catch (NumberFormatException ex ) {
-			JLabel erreur = new JLabel("Veuillez entrer un nombre valide joueur ");
-			panelInitialisation.add(erreur);
-			fen.setVisible(true);
+//			JLabel erreur = new JLabel("Veuillez entrer un nombre valide joueur ");
+//			panelInitialisation.add(erreur);
+//			fen.setVisible(true);
 			preparation();
 		}
 		
 		if (nbJoueurs <= 0) {
-			JLabel erreur = new JLabel("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
-			panelInitialisation.add(erreur);
-			fen.setVisible(true);
+//			JLabel erreur = new JLabel("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
+//			panelInitialisation.add(erreur);
+//			fen.setVisible(true);
 			preparation();
 		}
 		
 		if (nbJoueurs > 4) {
-			JLabel erreur = new JLabel("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
-			panelInitialisation.add(erreur);
-			fen.setVisible(true);
+//			JLabel erreur = new JLabel("Ce jeu ne ce joue qu'avec 2, 3 ou 4 joueurs ! Veuillez entrer au moins une de ces valeurs ");
+//			panelInitialisation.add(erreur);
+//			fen.setVisible(true);
 			preparation();
 		}
 		
@@ -252,5 +226,5 @@ panelInitialisation.add(but);
 	}
 
 	}
-
 }
+
