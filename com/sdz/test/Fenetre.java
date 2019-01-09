@@ -13,14 +13,14 @@ import javax.swing.*;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.Graphics;
-import javax.swing.JButton;
+
 
 
 
 public class Fenetre extends JFrame implements KeyListener{
    JPanel container = new JPanel();
-   public static int largeurFen =1500;
-   public static int HauteurFen =900;   
+   public static int largeurFen =200;
+   public static int HauteurFen =200;   
    
      public Fenetre() {
 	   
@@ -33,9 +33,7 @@ public class Fenetre extends JFrame implements KeyListener{
 	   
   
 	   container.setBackground(Color.DARK_GRAY);
-	   //On lui donne un nombre de colonnes à afficher
-
-		
+	   
 	   this.addKeyListener(this);
 	   this.setVisible(true);
 	   this.setContentPane(container);
@@ -45,15 +43,6 @@ public class Fenetre extends JFrame implements KeyListener{
    public void StartGame() {
 	 //  anaconda.jouer();
    }
-   
-   
-   
-	   
-		//...
-	 
-	
-   
-   
   @Override 
    public void keyPressed(KeyEvent arg0) {
 	   

@@ -2,17 +2,12 @@ package com.sdz.test;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
 
 
 
-public class MainGame extends JPanel {
+public class MainGame {
 	
 	public static void main(String[] args) {
-		
-		
 		Card.Openfile();
 		ArrayList<Card> tableaux = Card.tableau;
 		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
@@ -67,7 +62,7 @@ public class MainGame extends JPanel {
 			for(String currentPlayer: ordre) {
 
 		Personn joueurs= Personn.findPlayerByPseudo(currentPlayer);	
-		
+			
 		System.out.println(joueurs.getPseudo());	
 		
 		
