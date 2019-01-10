@@ -1,4 +1,4 @@
-package com.sdz.test;
+package com.sdz.graphic;
 import java.util.*;
 
 
@@ -21,7 +21,7 @@ public class PremierTour extends Presentation{
 	
 	static ArrayList <Card> piocheJoueur = Card.piocheJoueur;
 
-	
+	 
 	protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
 	  Personn Joueur1 = Presentation.Joueur1;
 	  Personn Joueur2 = Presentation.Joueur2;
@@ -32,13 +32,14 @@ public class PremierTour extends Presentation{
 	static Scanner scan = new Scanner(System.in);
 
 	
-
+ 
 	
 	public static void piocheRoiJoueurs (int nbplayers) {
 		System.out.println("...........");
 		
 		switch(nbplayers) {
 		   case 2 :
+			   System.out.println("hi");
 			   Card.tirageCarte(4);
 			   ArrayList<Card> sublist = new ArrayList<Card>(piocheJoueur.subList(0, 4));
 			   
@@ -46,12 +47,14 @@ public class PremierTour extends Presentation{
 		      break; // optional
 		   
 		   case 3 :
+			   System.out.println("hi");
 			   Card.tirageCarte(3);
 			   ArrayList<Card> sublist2 = new ArrayList<Card>(piocheJoueur.subList(0, 3));
 			   
 			   Test.paintThePioche(sublist2);
 		      break; // optional
 		   case 4 :
+			   System.out.println("hi");
 			   Card.tirageCarte(4);
 			   ArrayList<Card> sublist3 = new ArrayList<Card>(piocheJoueur.subList(0, 4));
 			   
@@ -61,7 +64,7 @@ public class PremierTour extends Presentation{
 		
 		}
 		
-		
+	
 		System.out.println("Les cartes que vous avez pioch�es sont : ");
 		Collections.sort(memoires);   // ici on trie les carte par ordre croissant !!!  // ordre croissant � mettre en place ! 
 		 for (int i =0;i< memoires.size();i++){    
@@ -77,12 +80,14 @@ public class PremierTour extends Presentation{
 		int i = nbJoueurs;
 		while (listeJoueurs.size() > 0) {
 			 
-		
+		 
 				if(nbJoueurs==3 || nbJoueurs==4 || nbJoueurs ==2) {
 					int random = (int) (Math.random() * (i));
 					i--; 
 					String currentPlayer = listeJoueurs.get(random);
-					
+					Personn player= Personn.findPlayerByPseudo(currentPlayer);
+					Test.container= Test.containerp1;
+					Test.container.setVisible(true);
 					System.out.println("Nous allons jouer avec " + currentPlayer);
 					System.out.println("Quelle est la num�ro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
@@ -99,7 +104,7 @@ public class PremierTour extends Presentation{
 					else {
 						listeJoueurs2.add(listeJoueurs.get(random));
 						listeJoueurs.remove(random);
-						Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
+//	 tempo					Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
 //						System.out.println(choixCarte);
 //						System.out.println(Card.returnCard(choixCarte).getNumCards());
 						player.ajouterCarte(Card.returnCard(choixCarte));

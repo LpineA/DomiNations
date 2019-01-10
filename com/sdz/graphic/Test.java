@@ -1,4 +1,4 @@
-package com.sdz.test;
+package com.sdz.graphic;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -20,7 +20,9 @@ import java.util.*;
 	  
 	  
     static GridLayout grid  = new GridLayout(9, 9);
-    static GridLayout grid2  = new GridLayout(9, 2);
+    static GridLayout grid2  = new GridLayout(1, 2);
+    static GridLayout gridCarteAJouer  = new GridLayout(4, 2);
+    static GridLayout gridDePioche  = new GridLayout(4, 2);
     
 	int numeroCase;
 	ArrayList <Integer> listeCase = new ArrayList <Integer>();
@@ -28,6 +30,8 @@ import java.util.*;
 	
 	
 	ArrayList  <JButton> buttonList = new ArrayList <JButton> ();
+	
+	//POur chaque joueur son propre jeux
 	static ArrayList  <JButton> buttonListp1 = new ArrayList <JButton> ();
 	static ArrayList  <JButton> buttonListp2 = new ArrayList <JButton> ();
 	static ArrayList  <JButton> buttonListp3 = new ArrayList <JButton> ();
@@ -39,8 +43,14 @@ import java.util.*;
 	static JPanel containerp4 = new JPanel();
 	
 	static ArrayList <JButton> buttonList2 = new ArrayList <JButton> ();
+	static ArrayList <JButton> buttonList3 = new ArrayList <JButton> ();
+	
+	
+	
 	static JPanel container = new JPanel();
 	JPanel container2 = new JPanel();
+	JPanel containerCarteAJoueur = new JPanel();
+	JPanel containerDePioche = new JPanel();
 	Box b10 = Box.createHorizontalBox();
 	public static Dimension fullScreen = Toolkit.getDefaultToolkit().getScreenSize();
 	
@@ -50,13 +60,13 @@ import java.util.*;
 	
 	
 	
-	  public JPanel getContainer() {
-		return container;
-	}
-
-	public void setContainer(JPanel container) {
-		this.container = container;
-	}
+//	  public JPanel getContainer() {
+//		return container;
+//	}
+//
+//	public void setContainer(JPanel container) {
+//		this.container = container;
+//	}
 
 	public Box getB10() {
 		return b10;
@@ -81,7 +91,9 @@ import java.util.*;
   	    
   	    
 	    
-	    
+  	  containerCarteAJoueur.setLayout(gridCarteAJouer);
+  	containerDePioche.setLayout(gridDePioche);
+  	  
 	    container2.setLayout(grid2);
 	    
 	    Border border = container.getBorder();
@@ -110,8 +122,13 @@ import java.util.*;
 	    	buttonListp1.add(gridButton);
 	    	gridButton.setVisible(true);
 	    	containerp1.add(gridButton);
+//	    	JButton test = buttonListp1.get(40);
+//	  	    test.setForeground(Color.WHITE);
+//	  	    paintCase(test, Color.BLACK, "Castle");
 	    }
-  	    
+  	  JButton test = buttonListp1.get(40);
+	    test.setForeground(Color.WHITE);
+	    paintCase(test, Color.BLACK, "Castle");
   	    
   	    
   	    
@@ -123,8 +140,13 @@ import java.util.*;
 	    	buttonListp2.add(gridButton);
 	    	gridButton.setVisible(true);
 	    	containerp2.add(gridButton);
+//	    	JButton test = buttonListp2.get(40);
+//	  	    test.setForeground(Color.WHITE);
+//	  	    paintCase(test, Color.BLACK, "Castle");
 	    }
-	    
+    	JButton test2 = buttonListp2.get(41);
+  	    test2.setForeground(Color.WHITE);
+  	    paintCase(test2, Color.BLACK, "Castle");
 	    
 	    
 	    containerp3.setLayout(grid);
@@ -135,8 +157,13 @@ import java.util.*;
 	    	buttonListp3.add(gridButton);
 	    	gridButton.setVisible(true);
 	    	containerp3.add(gridButton);
+//	    	JButton test = buttonListp3.get(40);
+//	  	    test.setForeground(Color.WHITE);
+//	  	    paintCase(test, Color.BLACK, "Castle");
 	    }
-  	    
+  	  JButton test3 = buttonListp3.get(42);
+	    test3.setForeground(Color.WHITE);
+	    paintCase(test3, Color.BLACK, "Castle");
   	    
   	  containerp4.setLayout(grid);
 	    for (int l = 1 ; l<82 ; l++) {
@@ -146,8 +173,14 @@ import java.util.*;
 	    	buttonListp4.add(gridButton);
 	    	gridButton.setVisible(true);
 	    	containerp4.add(gridButton);
+	    	
+//	    	JButton test = buttonListp4.get(40);
+//  	    test.setForeground(Color.WHITE);
+//  	    paintCase(test, Color.BLACK, "Castle");
 	    }
-  	    
+	    JButton test4 = buttonListp4.get(43);
+	    test4.setForeground(Color.WHITE);
+	    paintCase(test4, Color.BLACK, "Castle");
   	    
   	    
   	    
@@ -162,15 +195,23 @@ import java.util.*;
   	  Box b6 = Box.createVerticalBox();
   	  
   	  
-  	for (int l = 1 ; l<17 ; l++) {
+  	for (int l = 1 ; l<9 ; l++) {
     	JButton gridButton = new JButton(Integer.toString(l));
     	gridButton.addActionListener(this);
     	buttonList2.add(gridButton);
     	gridButton.setVisible(true);
-    	container2.add(gridButton);
+    	containerCarteAJoueur.add(gridButton);
+    }
+  	for (int l = 1 ; l<9 ; l++) {
+    	JButton gridButton = new JButton(Integer.toString(l));
+    	gridButton.addActionListener(this);
+    	buttonList3.add(gridButton);
+    	gridButton.setVisible(true);
+    	containerDePioche.add(gridButton);
     }
   	  
-  
+  container2.add(containerCarteAJoueur);
+  container2.add(containerDePioche);
   	  
   	  b6.add(container2);
   	JLabel playerPlaying = new JLabel("c'est au tour de joueur N");
@@ -193,12 +234,10 @@ import java.util.*;
   	piocheJoueur.add(card2);
   	piocheJoueur.add(card3);
   	piocheJoueur.add(card4);
-  	paintThePioche( piocheJoueur);
+//  	paintThePioche( piocheJoueur);
   	  
   	    this.getContentPane().add(b10);
-//  	    JButton test = buttonList.get(40);
-//  	    test.setForeground(Color.WHITE);
-//  	    paintCase(test, Color.BLACK, "Castle");
+//  	    
 	  }
 	  
   int i = 0;
@@ -209,18 +248,18 @@ import java.util.*;
   
   
   // fonction pour cree un terain individuel pour chaque joueur
-    public JPanel terrainJoueur() {
-    	JPanel container = new JPanel();
-    	for (int l = 1 ; l<82 ; l++) {
-	    	JButton gridButton = new JButton(Integer.toString(l));
-	    	gridButton.addActionListener(this);
-	    	buttonList.add(gridButton);
-	    	gridButton.setVisible(true);
-	    	container.add(gridButton);
-	    }
-    	
-    	return container;
-    }
+//    public JPanel terrainJoueur() {
+//    	JPanel container = new JPanel();
+//    	for (int l = 1 ; l<82 ; l++) {
+//	    	JButton gridButton = new JButton(Integer.toString(l));
+//	    	gridButton.addActionListener(this);
+//	    	buttonList.add(gridButton);
+//	    	gridButton.setVisible(true);
+//	    	container.add(gridButton);
+//	    }
+//    	
+//    	return container;
+//    }
     
     
     
@@ -268,30 +307,59 @@ import java.util.*;
 	
 	  	  
 	public static Color getTheColorOfCard(String Type) {
-		if (Type == "Champs") {
+		if (Type.equals("Prairie")) {
 			return Color.yellow;
 		}
 
-		else if (Type == "Prairie") {
+		else if (Type.equals("Foret")) {
 			return Color.GREEN;
 		}
-		else if (Type == "Mer") {
+		else if (Type.equals("Mer")) {
 			return Color.BLUE;
 		}
-		else if (Type == "Montagne") {
-			return Color.lightGray;
+		else if (Type.equals("Champs")) {
+			return Color.RED;
 		}
-		else if (Type =="Mine") {
+		else if (Type.equals("Montagne")) {
+			return Color.lightGray;
+		} 
+		else if (Type.equals("Mine")) {
 			return Color.GRAY;
 		}
 		else {
-			return null;
+			return  null;
 		}
 		
 	}
 	
-	
+	//retoucher ca un peu
 	public static void paintThePioche(ArrayList<Card> piocheJoueur) {
+		String numberOfCrowns;
+		String numberOfCrowns2;
+		Color c1;
+		Color c2;
+		int i =0;
+		for (Card pioche: piocheJoueur) {
+			JButton currentButton=buttonList3.get(i);
+			JButton currentButton2=buttonList3.get(i+1);
+			numberOfCrowns=Integer.toString(pioche.getNumC1());
+			numberOfCrowns2=Integer.toString(pioche.getNumC2());
+			c1=getTheColorOfCard(pioche.getNomTerrain1());
+			System.out.println(c1);
+			c2=getTheColorOfCard(pioche.getNomTerrain2());
+			System.out.println(c2);
+			
+			paintCase ( currentButton,  c1,  numberOfCrowns);
+			paintCase ( currentButton2,  c2,  numberOfCrowns2);
+
+			i++;
+			i++;
+		}
+		
+	}
+	
+	//retoucher ca un peu
+	public static void paintTheCardsToPLay(ArrayList<Card> piocheJoueur) {
 		String numberOfCrowns;
 		String numberOfCrowns2;
 		Color c1;
@@ -303,8 +371,9 @@ import java.util.*;
 			numberOfCrowns=Integer.toString(pioche.getNumC1());
 			numberOfCrowns2=Integer.toString(pioche.getNumC2());
 			c1=getTheColorOfCard(pioche.getNomTerrain1());
+			System.out.println(c1);
 			c2=getTheColorOfCard(pioche.getNomTerrain2());
-			
+			System.out.println(c2);
 			
 			paintCase ( currentButton,  c1,  numberOfCrowns);
 			paintCase ( currentButton2,  c2,  numberOfCrowns2);
@@ -314,6 +383,9 @@ import java.util.*;
 		}
 		
 	}
+	
+	
+	
 	
 	public static void main(String[] args) {
 //		  Test fen = new Test();

@@ -1,4 +1,4 @@
-package com.sdz.test;
+package com.sdz.graphic;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
@@ -296,7 +296,7 @@ public void setBtn4j(JButton btn4j) {
 //				 
 				  
 				  
-				  }
+				  } 
 			  
 			  
 			  if(arg0.getSource() == btnpl) {

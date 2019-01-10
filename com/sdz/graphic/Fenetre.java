@@ -1,4 +1,4 @@
-package com.sdz.test;
+package com.sdz.graphic;
 
 //import java.awt.BorderLayout;
 //import java.awt.CardLayout;
@@ -96,7 +96,7 @@ public class Fenetre extends JFrame{
   JPanel content = new JPanel();
   //Liste des noms de nos conteneurs pour la pile de cartes
   String[] listContent = {"CARD_1", "CARD_2"};
-  
+   
   int indice = 0;
   public static Dimension fullScreen = Toolkit.getDefaultToolkit().getScreenSize();
   public static JButton bouton = new JButton("PLay..");
@@ -131,10 +131,25 @@ public class Fenetre extends JFrame{
     //Définition de l'action du bouton
     bouton.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
-        //Via cette instruction, on passe au prochain conteneur de la pile
+        //Via cette instruction, on passe au prochain conteneur de la pile   (pense a la decomenter.....)
     	  
 //        cl.next(content);
-        Jouer.Jouer();
+//    	  int nbplayers= Presentation.nbJoueurs;
+//    	  switch(nbplayers) {
+//    	   case 2 :
+//    		   Card.suprimerCartes(24);
+//    	      break; // optional
+//    	   
+//    	   case 3 :
+//    		  Card.suprimerCartes(36);
+//    	      break; // optional
+//    	   case 4 :
+//    		  Card.tableau2 = Card.tableau;
+//    		      break; //
+//    		      
+//    	   // You can have any number of case statements.
+//    	}
+//    	  PremierTour.piocheRoiJoueurs ( nbplayers);
       }
     });
 		

@@ -1,4 +1,4 @@
-package com.sdz.test;
+package com.sdz.graphic;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,6 +18,7 @@ public class MainGame extends JPanel {
 		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
 		
 		Fenetre fen = new Fenetre();
+		Jouer.Jouer();
 //		Presentation.preparation();
 //		while(continu==true) {
 //			

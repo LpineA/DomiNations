@@ -1,4 +1,4 @@
- package com.sdz.test;
+package com.sdz.graphic;
 
 import java.awt.Color;
 import java.io.BufferedReader;
@@ -131,7 +131,7 @@ public class Card {
 		}
 		
 	}
-
+ 
 	public static Card returnCard (int number) {
 		
 		Card h = null;

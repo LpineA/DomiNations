@@ -1,14 +1,87 @@
-package com.sdz.test;
+package com.sdz.graphic;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Jouer {
 
+	//this is temporary as well
+	public static ArrayList< String> listeJoueur =Presentation.listeJoueur;
+	protected static ArrayList<Personn> nosJoueur = Presentation.nosJoueur;
+	//end of temporary
 
 public static void Jouer() {
+//iz gots to decoment this after
+	
+// int nbjoueur= Presentation.nbJoueurs;
 
-int nbjoueur= Presentation.nbJoueurs;
+//end
+
+	
+	
+	
+	
+//this shit is temporary :::  
+
+int nbjoueur=3;
+
+System.out.println("We playing 2");
+Personn Joueur1 = new Personn();
+
+Joueur1.setPseudo("Frank");
+
+Joueur1.setButtonList(Test.buttonListp1);
+Joueur1.setPanelJoueur(Test.containerp1);
+
+
+
+Personn Joueur2 = new Personn();
+Joueur2.setPseudo("Gwendall");
+
+Joueur2.setButtonList(Test.buttonListp2);
+Joueur2.setPanelJoueur(Test.containerp2);
+
+Personn Joueur3 = new Personn();
+Joueur3.setPseudo("Vero");
+
+
+Joueur3.setButtonList(Test.buttonListp3);
+Joueur3.setPanelJoueur(Test.containerp3);
+
+
+
+Joueur1.settotalNumberPlayers(nbjoueur);
+Joueur2.settotalNumberPlayers(nbjoueur);
+Joueur3.settotalNumberPlayers(nbjoueur);
+
+nosJoueur.add(Joueur1);
+nosJoueur.add(Joueur2);
+nosJoueur.add(Joueur3);
+
+listeJoueur.add("Frank");
+listeJoueur.add("Gwendall");
+listeJoueur.add("Vero");
+Fenetre.bouton.setVisible(true);
+
+
+// end of temporary running stufff...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 System.out.println("Il y a bien "+ nbjoueur +" joueurs");
 
 switch(nbjoueur) {
@@ -25,7 +98,7 @@ switch(nbjoueur) {
 	      
    // You can have any number of case statements.
 }
-
+ 
 //ArrayList<Card> tableaux2 = Card.tableau2;
 System.out.println(Card.tableau2.size());
 
@@ -59,13 +132,13 @@ Personn joueurs= Personn.findPlayerByPseudo(currentPlayer);
 
 System.out.println(joueurs.getPseudo());	
 
-
+ 
 
 if (nbjoueur==3 || nbjoueur==4) {
 System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
 System.out.println(joueurs.getOrdreTour().get(0)+"\n");
-System.out.println("Pose de aymeric");
-joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(0));
+//System.out.println("Pose de aymeric");
+//joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(0));
 }
 else if (nbjoueur==2) {
 	System.out.println(joueurs.getPiocheJoueur().get(0).getNumCards());
@@ -73,9 +146,9 @@ else if (nbjoueur==2) {
 	Collections.sort(joueurs.getOrdreTour()); 
 	System.out.println(joueurs.getOrdreTour().get(0)+"\n");
 	System.out.println(joueurs.getOrdreTour().get(1)+"\n");
-	System.out.println("Pose de aymeric");
-	joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(0));
-	joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(1));
+//	System.out.println("Pose de aymeric");
+//	joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(0));
+//	joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(1));
 	}
 
 
@@ -117,8 +190,8 @@ else if (nbjoueur==2) {
 			if (nbjoueur==3 || nbjoueur==4) {
 			System.out.println(joueurs.getPiocheJoueur().get(i).getNumCards());
 			System.out.println(joueurs.getOrdreTour().get(0)+"\n");
-			System.out.println("Pose de aymeric");
-			joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(i));
+//			System.out.println("Pose de aymeric");
+//			joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(i));
 			
 			}
 			else if (nbjoueur==2) {
@@ -128,9 +201,9 @@ else if (nbjoueur==2) {
 				System.out.println(joueurs.getOrdreTour().get(0)+"\n");
 				System.out.println(joueurs.getOrdreTour().get(1)+"\n");
 				
-				System.out.println("Pose de aymeric");
-				joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(i));
-				joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(i+1));
+//				System.out.println("Pose de aymeric");
+//				joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(i));
+//				joueurs.setPositionofDominos(joueurs.getPiocheJoueur().get(i+1));
 				
 				}
 			
@@ -156,7 +229,7 @@ else if (nbjoueur==2) {
 	
 	
 	
-	
+
 	
 	
 	

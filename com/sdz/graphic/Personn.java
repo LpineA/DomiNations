@@ -1,4 +1,4 @@
-package com.sdz.test;
+package com.sdz.graphic;
 import java.util.*;
 import javax.swing.*;
 
@@ -13,7 +13,7 @@ public class Personn {
 		ArrayList  <JButton> buttonList = new ArrayList <JButton> ();
 		
 		
-		 
+		  
 		
 		//  pour le moment juste un tableau vide  et on initalize la carte du centre a center
 		
@@ -150,6 +150,8 @@ public class Personn {
 		System.out.println("Il vous reste " + caseVideRestante + " cases vides que vous pouvez encore complétées.");
 		}	
 		
+		
+		
 		public void setTerrain(int index1, int index2, String nomTer1, String nomTer2, String nbreRois1, String nbreRois2 ) {
 			
 			String Carte1[] = {nomTer1, nbreRois1};
@@ -158,7 +160,10 @@ public class Personn {
 			Terrain.put(index1, Carte1);
 			Terrain.put(index2, Carte2);
 		}
-					
+			 
+		
+		
+		
 		public void setPositionofDominos(Card Card) {
 			
 			String typeDominoFace1;
