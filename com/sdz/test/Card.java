@@ -1,5 +1,6 @@
  package com.sdz.test;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -14,13 +15,14 @@ import java.lang.*;
 public class Card {
 	protected static ArrayList<Card> tableau = new ArrayList<Card>();
 	protected static ArrayList<Card> tableau2 = new ArrayList<Card>();
-	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
+	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes piochées 
 	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 	protected int numberOnCard;
 	protected int numberCrowns1;
 	protected int numberCrowns2;
 	String Terrain1;
 	String Terrain2;
+	
 
 	public static ArrayList<Card> Openfile() {
 				
@@ -142,11 +144,7 @@ public class Card {
 		return h;
 		
 	}
-
-	public static void PlacerCarte () {
-		
-		
-}
+	
 
 }
 
