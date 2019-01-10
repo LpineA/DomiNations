@@ -100,6 +100,12 @@ public class Fenetre extends JFrame{
   int indice = 0;
   public static Dimension fullScreen = Toolkit.getDefaultToolkit().getScreenSize();
   public static JButton bouton = new JButton("PLay..");
+  static JButton bouton2;
+  
+  
+  
+  
+  
   public Fenetre(){
     this.setTitle("CardLayout");
     this.setSize(fullScreen);
@@ -132,6 +138,32 @@ public class Fenetre extends JFrame{
     bouton.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
         //Via cette instruction, on passe au prochain conteneur de la pile   (pense a la decomenter.....)
+    	  int nbplayers= Presentation.nbJoueurs;
+    	  System.out.println(nbplayers);
+    	  
+    	  System.out.println("Il y a bien "+ nbplayers +" joueurs");
+
+    	  switch(nbplayers) {
+    	     case 2 :
+    	  	   Card.suprimerCartes(24);
+    	        break; // optional
+    	     
+    	     case 3 :
+    	  	  Card.suprimerCartes(36);
+    	        break; // optional
+    	     case 4 :
+    	  	  Card.tableau2 = Card.tableau;
+    	  	      break; //
+    	  	      
+    	     // You can have any number of case statements.
+    	  }
+    	  
+    	  PremierTour.piocheRoiJoueurs(nbplayers);
+    	  
+    	  
+    	  
+    	 
+    	  
     	  
 //        cl.next(content);
 //    	  int nbplayers= Presentation.nbJoueurs;
@@ -153,7 +185,7 @@ public class Fenetre extends JFrame{
       }
     });
 		
-    JButton bouton2 = new JButton("Contenu par indice");
+    bouton2 = new JButton("Contenu par indice");
     //Définition de l'action du bouton2
     bouton2.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){				

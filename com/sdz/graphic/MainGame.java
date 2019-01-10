@@ -18,7 +18,7 @@ public class MainGame extends JPanel {
 		ArrayList<String> listeJoueurs = Presentation.listeJoueur;
 		
 		Fenetre fen = new Fenetre();
-		Jouer.Jouer();
+//		Jouer.Jouer();
 //		Presentation.preparation();
 //		while(continu==true) {
 //			

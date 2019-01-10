@@ -5,6 +5,8 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
+import snake.warningWindow;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -42,6 +44,7 @@ import java.util.*;
 	static JPanel containerp3 = new JPanel();
 	static JPanel containerp4 = new JPanel();
 	
+	// ici le 2 c'est pour les cartes selec et 3 pour la pioche
 	static ArrayList <JButton> buttonList2 = new ArrayList <JButton> ();
 	static ArrayList <JButton> buttonList3 = new ArrayList <JButton> ();
 	
@@ -54,6 +57,17 @@ import java.util.*;
 	Box b10 = Box.createHorizontalBox();
 	public static Dimension fullScreen = Toolkit.getDefaultToolkit().getScreenSize();
 	
+	
+	// le truc de aymeric 
+
+	ArrayList <Integer> clickMemoryTableau = new ArrayList<Integer>();	
+	ArrayList <Integer> clickMemoryPioche = new ArrayList<Integer>();
+	ArrayList <String> player = Presentation.listeJoueur;
+	ArrayList <String> fieldChosen = new ArrayList <String>();
+	
+	Color defaultColor = new Color(238,238,238);
+	
+	// fin aymeric
 	
 	
 	
@@ -241,57 +255,119 @@ import java.util.*;
 //  	    
 	  }
 	  
-  int i = 0;
+	 int i = 0;
+	 int j = 0;
 
   
   
-  
-  
-  
-  // fonction pour cree un terain individuel pour chaque joueur
-//    public JPanel terrainJoueur() {
-//    	JPanel container = new JPanel();
-//    	for (int l = 1 ; l<82 ; l++) {
-//	    	JButton gridButton = new JButton(Integer.toString(l));
-//	    	gridButton.addActionListener(this);
-//	    	buttonList.add(gridButton);
-//	    	gridButton.setVisible(true);
-//	    	container.add(gridButton);
-//	    }
-//    	
-//    	return container;
-//    }
+
     
     
     
     
     
-	public void actionPerformed(ActionEvent e) {
+	 public void actionPerformed(ActionEvent e) {
 			i++;
-			for (int j = 0 ; j<82 ; j++) {
-				if (e.getSource() == buttonList.get(j)) {
-					
-					for (int g = 0 ; g<typeOfCard.size(); g++) {
-						paintCase(buttonList.get(j), getTheColorOfCard(typeOfCard.get(g)), Integer.toString(j+1));
-						numeroCase = j;
-						listeCase.add(numeroCase);
-						System.out.println(j);
-						i++;
-						System.out.println(i);
-						if (g==0) {
-							g=1;
-						}
-					}
-					
-				}
-				
-				if (i>3) {
-					break;
-				}
+//			for (int j = 1 ; j<82 ; j++) {
+//				if (e.getSource() == buttonList.get(j)) {
+//					if (alreadyClickedTableau(j) == false) {
+//						
+//						for (int g = 0 ; g<fieldChosen.size(); g++) {
+//							paintCase(buttonList.get(j), getTheColorOfCard(typeOfCard.get(g)), Integer.toString(j+1));
+//							clickMemoryTableau.add(j);
+//							numeroCase = j;
+//							listeCase.add(numeroCase);
+//							i++;
+//							
+//							if (g==0) {
+//								g=1;
+//							}
+//						}
+//					} else {
+//						warningWindow clickedAlready = new warningWindow("Attention vous avez déjà cliqué sur cette case !");
+//						clickedAlready.setVisible(true);
+//						break;
+//					}
+//					
+//				}
+//				
+//				if (i>3) {
+//					break;
+//				}
+//			}
+			
+//			player.add("Joueur1");
+//			player.add("Joueur2");
+//			player.add("Joueur3");
+//			player.add("Joueur4");
+			if (clickMemoryPioche.size() == 0) {
+					choosePioche(e, setPlayerTurn(player, 0));
 			}
 			
+			if (clickMemoryPioche.size() ==2) {
+				choosePioche(e, setPlayerTurn(player, 1));
+			}
+			
+			if (clickMemoryPioche.size() ==4) {
+				choosePioche(e, setPlayerTurn(player, 2));
+			}
+			
+			if (clickMemoryPioche.size() == 6) {
+				choosePioche(e, setPlayerTurn(player, 3));
+			}
 			
 	}
+	
+	
+	
+	
+	
+	
+	//besoin de regarder un peu 
+	 public void choosePioche(ActionEvent e , String pseudoPlayer) {
+			j++;
+			for (int i =0 ; i<9 ; i++) {		
+				if (e.getSource() == buttonList3.get(i)) {
+					if (i != 2 && i != 3 && i!= 6 && i!=7) {
+						if (i < 8){
+							if (alreadyClickedPioche(i) == false) {
+								buttonList3.get(i).setText(pseudoPlayer);
+								buttonList3.get(i+2).setText(pseudoPlayer);
+								buttonList3.get(i).setForeground(Color.white);
+								buttonList3.get(i+2).setForeground(Color.white);
+									clickMemoryPioche.add(i);
+									clickMemoryPioche.add(i+2);
+									System.out.println(i);
+								}
+							
+						
+							if (alreadyClickedPioche(i) == true) {
+								warningWindow alreadyClickedPioche = new warningWindow("Attention vous avez déjà cliqué sur cette case");
+								alreadyClickedPioche.setVisible(true);
+								break;
+							}
+						}
+					
+					else {
+						warningWindow piocheTour1 = new warningWindow ("Pour le premier tour sélectionné uniquement \n des cartes dans la colonnes de droite");
+						piocheTour1.setVisible(true);	
+						break;
+					}
+					
+				if(i == 2 && i == 3 && i == 6 && i == 7) {
+					warningWindow checkPosition = new warningWindow("Veuillez sélectionner une carte valide dans la pioche");
+					checkPosition.setVisible(true);
+				}
+	       }
+	    }
+			}
+	}
+	
+	
+	
+	
+	
+	
 	
 	
   
@@ -339,10 +415,10 @@ import java.util.*;
 		String numberOfCrowns2;
 		Color c1;
 		Color c2;
-		int i =0;
+		int k =0;
 		for (Card pioche: piocheJoueur) {
-			JButton currentButton=buttonList3.get(i);
-			JButton currentButton2=buttonList3.get(i+1);
+			JButton currentButton=buttonList3.get(k);
+			JButton currentButton2=buttonList3.get(k+1);
 			numberOfCrowns=Integer.toString(pioche.getNumC1());
 			numberOfCrowns2=Integer.toString(pioche.getNumC2());
 			c1=getTheColorOfCard(pioche.getNomTerrain1());
@@ -353,8 +429,8 @@ import java.util.*;
 			paintCase ( currentButton,  c1,  numberOfCrowns);
 			paintCase ( currentButton2,  c2,  numberOfCrowns2);
 
-			i++;
-			i++;
+			k++;
+			k++;
 		}
 		
 	}
@@ -365,10 +441,10 @@ import java.util.*;
 		String numberOfCrowns2;
 		Color c1;
 		Color c2;
-		int i =0;
+		int k =0;
 		for (Card pioche: piocheJoueur) {
-			JButton currentButton=buttonList2.get(i);
-			JButton currentButton2=buttonList2.get(i+1);
+			JButton currentButton=buttonList2.get(k);
+			JButton currentButton2=buttonList2.get(k+1);
 			numberOfCrowns=Integer.toString(pioche.getNumC1());
 			numberOfCrowns2=Integer.toString(pioche.getNumC2());
 			c1=getTheColorOfCard(pioche.getNomTerrain1());
@@ -379,21 +455,83 @@ import java.util.*;
 			paintCase ( currentButton,  c1,  numberOfCrowns);
 			paintCase ( currentButton2,  c2,  numberOfCrowns2);
 
-			i++;
-			i++;
+			k++;
+			k++;
 		}
 		
 	}
 	
 	
 	
+
 	
-	public static void main(String[] args) {
-//		  Test fen = new Test();
-//		  Presentation hu= new Presentation();
-//		  
-//		  fen.setVisible(true);
-	  }
+	public boolean alreadyClickedTableau(int a) {
+		if (clickMemoryTableau.contains(a)) {
+			new warningWindow("Attention vous avez déjà cliqué sur cette case");
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean alreadyClickedPioche(int a ) {
+		if (clickMemoryPioche.contains(a)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	public String getFieldByColor(Color c) {
+		if (c == Color.yellow) {
+			return "Champs";
+		}
+
+		else if (c == Color.GREEN) {
+			return "Prairie";
+		}
+		else if (c == Color.BLUE) {
+			return "Mer";
+		}
+		else if (c == Color.lightGray) {
+			return "Montagne";
+		}
+		else if (c ==Color.GRAY) {
+			return "Mine";
+		}
+		else {
+			return null;
+		}
+	}
+	
+	
+	public String setPlayerTurn(ArrayList <String> nosJoueurs, int i ) {
+		return nosJoueurs.get(i);
+}
+
+public void getChosenCardbyPlayer() {
+	Color  c = buttonList3.get(i).getBackground();
+	String Terrain = getFieldByColor(c);
+	fieldChosen.add(Terrain);
+	
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 
