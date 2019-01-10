@@ -18,12 +18,6 @@ public class Personn {
 		protected static ArrayList<Personn> nosJoueur= Presentation.nosJoueur;
 	
 		Scanner scan = new Scanner(System.in);
-
-
-
-		
-		
-		
 		
 	
 	public JPanel getPanelJoueur() {

@@ -33,8 +33,6 @@ public class Fenetre extends JFrame implements KeyListener{
 	   
   
 	   container.setBackground(Color.DARK_GRAY);
-	   //On lui donne un nombre de colonnes à afficher
-
 		
 	   this.addKeyListener(this);
 	   this.setVisible(true);

@@ -15,7 +15,7 @@ import java.lang.*;
 public class Card {
 	protected static ArrayList<Card> tableau = new ArrayList<Card>();
 	protected static ArrayList<Card> tableau2 = new ArrayList<Card>();
-	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes pioche 
+	static ArrayList<Integer> memoire = new ArrayList<Integer>();// c'est le numero des cartes piochées 
 	static ArrayList<Card> piocheJoueur = new ArrayList<Card>(); //ici c'est la carte entiere
 	protected int numberOnCard;
 	protected int numberCrowns1;

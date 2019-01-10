@@ -177,6 +177,8 @@ public class MainGame extends JPanel {
 //			Joueur1.Terrain.put(61, Carte19);
 //			Joueur1.Terrain.put(25, Carte20);
 //			Joueur1.Terrain.put(34, Carte21);
+		
+		/*
 			
 		for(Personn player: nosJoueur) {
 			System.out.println("test2");
@@ -261,6 +263,8 @@ public class MainGame extends JPanel {
 
 			return ordre;
 			}
-	}
+	}*/
+		
 
+	}
 }

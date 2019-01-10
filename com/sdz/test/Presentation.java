@@ -16,7 +16,7 @@ import java.awt.GridLayout;
 
 public class Presentation {
 	static String contenu;
-	static boolean continu= true;
+	static boolean continu =  true;
 	static int nbJoueurs;
 	static String pseudoJoueur1;
 	static String pseudoJoueur2;
@@ -31,7 +31,7 @@ public class Presentation {
    
 	static Fenetre fen = PremierTour.fen;
 
-
+	Scanner scan = new Scanner(System.in);
 	
 	public static void preparation () {
 
@@ -47,44 +47,37 @@ public class Presentation {
 //	    fen.getContentPane().add(new JButton("4"));
 //	    fen.getContentPane().add(new JButton("5"));
 
-		JPanel panelInitialisation = new JPanel();
-		 
-		
+		JPanel panelInitialisation = new JPanel();	
 		
 		JLabel l = new JLabel("Bienvenue dans le jeu de DomiNations" + "\n");
 		panelInitialisation.add(l);
-	
-	JLabel m = new JLabel("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
-	panelInitialisation.add(m);
-	
-	JTextField textField = new JTextField();
-	textField.setColumns(10);
-panelInitialisation.add(textField);
 
-JButton but= new JButton();
-panelInitialisation.add(but);
-	
+		JLabel m = new JLabel(
+				"Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
+		panelInitialisation.add(m);
+
+		JTextField textField = new JTextField();
+		textField.setColumns(10);
+		panelInitialisation.add(textField);
+
+		JButton but = new JButton();
+		panelInitialisation.add(but);
 		 
 		fen.setContentPane(panelInitialisation);
 	    fen.setVisible(true);
 		
-		
-		
-		Scanner scan = new Scanner(System.in);
+
 		
 //		System.out.println("#----------------------------------------------#" + "\n" );
 //		System.out.println("Bienvenue dans le jeu de DomiNations" + "\n" );
 //		System.out.println("#----------------------------------------------#" + "\n" );
-//		System.out.println("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");
-		
+//		System.out.println("Commençons par définir le nombre de joueurs (2,3 ou 4) qui vont jouer durant cette partie ;) Combien seront nous ? ");	
 		
 		while(continu) {
 		but.addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
 			  contenu = textField.getText();
 			  
-			     
-		
 
 		//--------------------------------------Variables Graphiques---------------------------------------------//
 		
@@ -246,7 +239,7 @@ panelInitialisation.add(but);
 			
 		}
 		continu=false;
-			   }  
+		   }  
 			
 	    }); 
 	}
