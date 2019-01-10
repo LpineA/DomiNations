@@ -78,6 +78,7 @@ public class PremierTour extends Presentation{
 		
 		int  choixCarte = 0;
 		int i = nbJoueurs;
+		Personn player;
 		while (listeJoueurs.size() > 0) {
 			 
 		 
@@ -85,9 +86,9 @@ public class PremierTour extends Presentation{
 					int random = (int) (Math.random() * (i));
 					i--; 
 					String currentPlayer = listeJoueurs.get(random);
-					Personn player= Personn.findPlayerByPseudo(currentPlayer);
-					Test.container= Test.containerp1;
-					Test.container.setVisible(true);
+					player= Personn.findPlayerByPseudo(currentPlayer);
+					Test.container.add(player.getPanelJoueur());
+					//Test.container.setVisible(true);
 					System.out.println("Nous allons jouer avec " + currentPlayer);
 					System.out.println("Quelle est la num�ro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
@@ -101,7 +102,7 @@ public class PremierTour extends Presentation{
 					if ((memoires.contains(choixCarte) == false) || (newliste.contains(choixCarte))){
 						System.out.println("Le num�ro de la carte que vous avez entr�, n'est pas disponible ! Veuillez entrer un num�ro de carte valide");
 					}
-					else {
+					else { 
 						listeJoueurs2.add(listeJoueurs.get(random));
 						listeJoueurs.remove(random);
 //	 tempo					Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
@@ -116,16 +117,18 @@ public class PremierTour extends Presentation{
 						System.out.println("\n");
 						player.setOrdreTour((memoires.indexOf(choixCarte))+1);// ici nous definissons ordre pour le prochain tour (+petite carte en 1er et grande joue en dernier) on fait plus 1 car index commence a 0
 //						memoire2.remove(memoire2.indexOf(choixCarte));
+						//Test.container.remove(player.getPanelJoueur());
 						
-						
+						//Test.container.remove(player.getPanelJoueur());
 						
 						
 					}
-					
+					Test.container.remove(player.getPanelJoueur());
 
 					
 					
 			}	
+				//Test.container.removeAll(Test.container);
 		}
 		piocheJoueur.removeAll(piocheJoueur);
 		memoires.removeAll(memoires);

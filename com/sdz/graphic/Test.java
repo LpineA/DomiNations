@@ -87,6 +87,7 @@ import java.util.*;
 	    JLabel joueurN = new JLabel("joueur N");
   	    b4.add(joueurN);
   	    
+  	    
 	    //On définit le layout à utiliser sur le content pane
   	    
   	    
@@ -128,7 +129,7 @@ import java.util.*;
 	    }
   	  JButton test = buttonListp1.get(40);
 	    test.setForeground(Color.WHITE);
-	    paintCase(test, Color.BLACK, "Castle");
+	    paintCase(test, Color.BLACK, "PLayer1");
   	    
   	    
   	    
@@ -144,9 +145,9 @@ import java.util.*;
 //	  	    test.setForeground(Color.WHITE);
 //	  	    paintCase(test, Color.BLACK, "Castle");
 	    }
-    	JButton test2 = buttonListp2.get(41);
+    	JButton test2 = buttonListp2.get(40);
   	    test2.setForeground(Color.WHITE);
-  	    paintCase(test2, Color.BLACK, "Castle");
+  	    paintCase(test2, Color.BLACK, "Player2");
 	    
 	    
 	    containerp3.setLayout(grid);
@@ -161,9 +162,9 @@ import java.util.*;
 //	  	    test.setForeground(Color.WHITE);
 //	  	    paintCase(test, Color.BLACK, "Castle");
 	    }
-  	  JButton test3 = buttonListp3.get(42);
+  	  JButton test3 = buttonListp3.get(40);
 	    test3.setForeground(Color.WHITE);
-	    paintCase(test3, Color.BLACK, "Castle");
+	    paintCase(test3, Color.BLACK, "Player3");
   	    
   	  containerp4.setLayout(grid);
 	    for (int l = 1 ; l<82 ; l++) {
@@ -178,9 +179,9 @@ import java.util.*;
 //  	    test.setForeground(Color.WHITE);
 //  	    paintCase(test, Color.BLACK, "Castle");
 	    }
-	    JButton test4 = buttonListp4.get(43);
+	    JButton test4 = buttonListp4.get(40);
 	    test4.setForeground(Color.WHITE);
-	    paintCase(test4, Color.BLACK, "Castle");
+	    paintCase(test4, Color.BLACK, "PLayer4");
   	    
   	    
   	    
