@@ -23,7 +23,7 @@ public class PremierTour extends Presentation{
 	  Personn Joueur2 = Presentation.Joueur2;
 	  Personn Joueur3 = Presentation.Joueur3;
 	  Personn Joueur4 = Presentation.Joueur4;
-	
+	  static Personn player;
 	
 	static Scanner scan = new Scanner(System.in);
 
@@ -70,6 +70,10 @@ public class PremierTour extends Presentation{
 					String currentPlayer = listeJoueurs.get(random);
 					
 					System.out.println("Nous allons jouer avec " + currentPlayer);
+					player= Personn.findPlayerByPseudo(currentPlayer);
+					player.displayTerrain();
+					
+					
 					System.out.println("Quelle est la numéro de la carte sur laquelle voulez vous poser votre roi ? ");
 					try {	
 						choixCarte = scan.nextInt();
@@ -85,7 +89,7 @@ public class PremierTour extends Presentation{
 					else {
 						listeJoueurs2.add(listeJoueurs.get(random));
 						listeJoueurs.remove(random);
-						Personn player= Personn.findPlayerByPseudo(currentPlayer);//il faut ces ligne pour que ce soit random et pas direct player 1
+						//il faut ces ligne pour que ce soit random et pas direct player 1
 //						System.out.println(choixCarte);
 //						System.out.println(Card.returnCard(choixCarte).getNumCards());
 						player.ajouterCarte(Card.returnCard(choixCarte));

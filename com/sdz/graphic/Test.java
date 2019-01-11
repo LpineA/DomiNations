@@ -56,7 +56,7 @@ import java.util.*;
 	JPanel containerDePioche = new JPanel();
 	Box b10 = Box.createHorizontalBox();
 	public static Dimension fullScreen = Toolkit.getDefaultToolkit().getScreenSize();
-	
+	static JButton ProchainTour;
 	
 	// le truc de aymeric 
 
@@ -231,7 +231,11 @@ import java.util.*;
   	  b6.add(container2);
   	JLabel playerPlaying = new JLabel("c'est au tour de joueur N");
   	  b6.add(playerPlaying );
-  	
+  	  
+  	  
+  	ProchainTour= new JButton("Prochain Tour !");
+  	ProchainTour.addActionListener(this);
+  	b6.add(ProchainTour);
   	  
 //  	b4.setPreferredSize(new Dimension(300,300));
 //    b6.setPreferredSize(new Dimension(200,400));
@@ -240,15 +244,15 @@ import java.util.*;
 //  	Box b10 = Box.createHorizontalBox();
   	b10.add(b4);
   	b10.add(b6);
-  	ArrayList<Card> piocheJoueur= new ArrayList<Card>();
-  	Card card1=new Card(22, 1, 2, "Champs", "Mer");
-  	Card card2=new Card(33, 1, 2, "Mer", "Mer");
-  	Card card3=new Card(21, 1, 2, "Montagne", "Mine");
-  	Card card4=new Card(26, 1, 2, "Champs", "Mer");
-  	piocheJoueur.add(card1);
-  	piocheJoueur.add(card2);
-  	piocheJoueur.add(card3);
-  	piocheJoueur.add(card4);
+//  	ArrayList<Card> piocheJoueur= new ArrayList<Card>();
+//  	Card card1=new Card(22, 1, 2, "Champs", "Mer");
+//  	Card card2=new Card(33, 1, 2, "Mer", "Mer");
+//  	Card card3=new Card(21, 1, 2, "Montagne", "Mine");
+//  	Card card4=new Card(26, 1, 2, "Champs", "Mer");
+//  	piocheJoueur.add(card1);
+//  	piocheJoueur.add(card2);
+//  	piocheJoueur.add(card3);
+//  	piocheJoueur.add(card4);
 //  	paintThePioche( piocheJoueur);
   	  
   	    this.getContentPane().add(b10);
@@ -300,44 +304,68 @@ import java.util.*;
 //			player.add("Joueur2");
 //			player.add("Joueur3");
 //			player.add("Joueur4");
-			if (clickMemoryPioche.size() == 0) {
-					choosePioche(e, setPlayerTurn(player, 0));
-			}
 			
-			if (clickMemoryPioche.size() ==2) {
-				choosePioche(e, setPlayerTurn(player, 1));
-			}
 			
-			if (clickMemoryPioche.size() ==4) {
-				choosePioche(e, setPlayerTurn(player, 2));
-			}
-			
-			if (clickMemoryPioche.size() == 6) {
-				choosePioche(e, setPlayerTurn(player, 3));
-			}
-			
+			JoueurChoix ( e);
+			ProchainTour(e);
 	}
 	
+	 
+	 
+	 	public void JoueurChoix (ActionEvent e) {
+	 		int iteration=0;
+	 		for (int nb =0; nb<=Presentation.nbJoueurs ;nb++) {
+	 		if (clickMemoryPioche.size() == 0) {
+				choosePioche(e, setPlayerTurn(player, 0));
+		}
+		
+		if (clickMemoryPioche.size() ==2) {
+			choosePioche(e, setPlayerTurn(player, 1));
+		}
+		
+		if (clickMemoryPioche.size() ==4) {
+			choosePioche(e, setPlayerTurn(player, 2));
+		}
+		
+		if (clickMemoryPioche.size() == 6) {
+			choosePioche(e, setPlayerTurn(player, 3));
+		}
+	 	}
+	 	}
+	 
+	 
+		public String setPlayerTurn(ArrayList <String> nosJoueurs, int i ) {
+			return nosJoueurs.get(i);
+	}
+	 
+		//il me faut une fonction qui genere random les joueur pour le 1er tour que je vais appeler sur le boutton play de Fenetre...
+	 
 	
-	
-	
+	 public void ProchainTour(ActionEvent e) {
+		 if(e.getSource()==ProchainTour) {
+		 int nbJoueurs= Presentation.nbJoueurs;
+		 player=Jouer.ordrejeux( nbJoueurs);
+		 }
+		 
+	 }
 	
 	
 	//besoin de regarder un peu 
 	 public void choosePioche(ActionEvent e , String pseudoPlayer) {
+		 // ici je veux que ca attribue la carte au joueur (sa pioche perso)
 			j++;
 			for (int i =0 ; i<9 ; i++) {		
 				if (e.getSource() == buttonList3.get(i)) {
-					if (i != 2 && i != 3 && i!= 6 && i!=7) {
+					if (i != 1 && i != 3 && i!= 5 && i!=7 ) {
 						if (i < 8){
 							if (alreadyClickedPioche(i) == false) {
 								buttonList3.get(i).setText(pseudoPlayer);
-								buttonList3.get(i+2).setText(pseudoPlayer);
+								buttonList3.get(i+1).setText(pseudoPlayer);
 								buttonList3.get(i).setForeground(Color.white);
-								buttonList3.get(i+2).setForeground(Color.white);
+								buttonList3.get(i+1).setForeground(Color.white);
 									clickMemoryPioche.add(i);
-									clickMemoryPioche.add(i+2);
-									System.out.println(i);
+									clickMemoryPioche.add(i+1);
+//									System.out.println(i);
 								}
 							
 						
@@ -512,9 +540,7 @@ import java.util.*;
 	}
 	
 	
-	public String setPlayerTurn(ArrayList <String> nosJoueurs, int i ) {
-		return nosJoueurs.get(i);
-}
+
 
 public void getChosenCardbyPlayer() {
 	Color  c = buttonList3.get(i).getBackground();
@@ -526,7 +552,7 @@ public void getChosenCardbyPlayer() {
 	
 	
 	
-	
+
 	
 	
 	
